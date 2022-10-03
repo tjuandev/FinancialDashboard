@@ -1,9 +1,7 @@
 const colors = {
-  green: {
-    50: '#DCE5D5',
-    200: '#9DBC8E',
-    900: '#14404D'
-  },
+  primary: '#14404D',
+  secondary: '#9DBC8E',
+  tertiary: '#DCE5D5',
   positive: '#19B200',
   negative: '#FF4242'
 }
