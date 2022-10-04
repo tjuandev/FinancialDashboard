@@ -27,10 +27,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.primary};
   }
 
-  html {
-    font-size: 62.5%;
-  }
-
   a {
     text-decoration: none;
     color: inherit;
