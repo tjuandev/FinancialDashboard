@@ -11,7 +11,4 @@ export const Container = styled.div`
   }
 `
 
-export const IconWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-`
+export const IconWrapper = styled.div``
