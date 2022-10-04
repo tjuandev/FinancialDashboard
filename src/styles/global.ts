@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import theme from './theme'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -20,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
   body, html, #__next {
     width: 100%;
     height: 100%;
+  }
+
+  body, button, label, textarea, input {
+    color: ${theme.colors.primary};
   }
 
   html {
