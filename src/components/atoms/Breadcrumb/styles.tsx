@@ -11,4 +11,7 @@ export const Container = styled.div`
   }
 `
 
-export const IconWrapper = styled.div``
+export const IconWrapper = styled.div`
+  width: 24px;
+  height: 24px;
+`
