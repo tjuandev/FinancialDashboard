@@ -8,7 +8,7 @@ type Props = {
 
 const Breadcrumb = ({ name, icon }: Props) => (
   <S.Container>
-    {icon}
+    <S.IconWrapper>{icon}</S.IconWrapper>
     <h1>{name}</h1>
   </S.Container>
 )
