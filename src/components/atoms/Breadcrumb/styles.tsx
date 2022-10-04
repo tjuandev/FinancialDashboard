@@ -3,6 +3,7 @@ import theme from 'styles/theme'
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 
   > h1 {
@@ -10,4 +11,7 @@ export const Container = styled.div`
   }
 `
 
-export const IconWrapper = styled.div``
+export const IconWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`
