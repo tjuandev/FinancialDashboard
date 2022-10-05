@@ -29,4 +29,16 @@ describe('<Button />', () => {
 
     expect(onClick).toHaveBeenCalledTimes(calledOneTime)
   })
+
+  it('Should change padding if prop passed', () => {
+    const { getByRole } = render(
+      <Button padding="1rem">{buttonChildren}</Button>
+    )
+
+    const buttonElement = getByRole('button')
+
+    expect(buttonElement).toHaveStyle({
+      padding: '1rem'
+    })
+  })
 })
