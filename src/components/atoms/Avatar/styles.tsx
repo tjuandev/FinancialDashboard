@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  gap: ${theme.spacing[4]};
+  gap: ${theme.spacing[2]};
 `
 
 export const InfoContainer = styled.div`
