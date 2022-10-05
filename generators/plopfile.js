@@ -9,11 +9,11 @@ const atomicDesignLayers = [
   },
   {
     name: 'Organism',
-    value: 'organism'
+    value: 'organisms'
   },
   {
     name: 'Template',
-    value: 'template'
+    value: 'templates'
   }
 ]
 
