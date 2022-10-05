@@ -10,6 +10,12 @@ module.exports = {
     'src/pages/_app.tsx',
     'src/pages/_document.tsx',
     'src/styles/',
+    'src/helpers/',
+    'src/assets/',
+    'src/atoms/index.ts',
+    'src/molecules/index.ts',
+    'src/organisms/index.ts',
+    'src/templates/index.ts',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
