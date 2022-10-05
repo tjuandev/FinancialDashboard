@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  gap: 0.5rem;
+  gap: ${theme.spacing[4]};
 `
 
 export const InfoContainer = styled.div`
@@ -41,7 +41,7 @@ export const AvatarPlaceholder = styled.div`
   background: ${theme.colors.secondary};
 
   font-weight: bolder;
-  font-size: ${theme.typography.sizes['2xl']};
+  font-size: ${theme.typography.sizes.xl};
 
   display: flex;
   align-items: center;
