@@ -1,4 +1,5 @@
 import GlobalStyles from 'styles/global'
+import '../.jest/nextImageMock'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
