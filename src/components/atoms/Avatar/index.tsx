@@ -1,4 +1,6 @@
-import { getInitialUpperCase } from 'helpers/string'
+import Image from 'next/image'
+
+import { getFirstAndLastInitialsUpperCase } from 'helpers/string'
 import * as S from './styles'
 
 type Props = {
@@ -9,11 +11,18 @@ type Props = {
 
 const ProfileImg = ({ url, name }: Omit<Props, 'description'>) => {
   if (!url) {
-    const avatarPlaceholder = getInitialUpperCase(name)
+    const avatarPlaceholder = getFirstAndLastInitialsUpperCase(name)
     return <S.AvatarPlaceholder>{avatarPlaceholder}</S.AvatarPlaceholder>
   }
 
-  return <img src={url} alt={`Avatar of ${name}`} />
+  return (
+    <Image
+      src={url}
+      alt={`Avatar of ${name}`}
+      layout="fill"
+      objectFit="contain"
+    />
+  )
 }
 
 const Avatar = ({ name, url, description }: Props) => {
@@ -23,7 +32,9 @@ const Avatar = ({ name, url, description }: Props) => {
         <p>{name}</p>
         <small>{description}</small>
       </S.InfoContainer>
-      <ProfileImg url={url} name={name} />
+      <S.ImageContainer>
+        <ProfileImg url={url} name={name} />
+      </S.ImageContainer>
     </S.Container>
   )
 }

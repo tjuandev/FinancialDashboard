@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { getInitialUpperCase } from 'helpers/string'
+import { getFirstAndLastInitialsUpperCase } from 'helpers/string'
 
 import Avatar from '..'
 
@@ -34,7 +34,9 @@ describe('<Avatar />', () => {
       <Avatar name={avatarName} description={avatarDescription} />
     )
 
-    const placeholderElement = getByText(getInitialUpperCase(avatarName))
+    const placeholderElement = getByText(
+      getFirstAndLastInitialsUpperCase(avatarName)!
+    )
 
     expect(placeholderElement).toBeInTheDocument()
   })
