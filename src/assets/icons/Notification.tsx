@@ -1,12 +1,16 @@
 type Props = {
   color?: string
+  height?: string | number
+  width?: string | number
 }
 
-function Icon({ color }: Props) {
+function Icon({ color, height = 22, width = 20 }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
+      height={height}
+      width={width}
       viewBox="0 0 20 22"
       role="img"
       aria-label="Notification"
