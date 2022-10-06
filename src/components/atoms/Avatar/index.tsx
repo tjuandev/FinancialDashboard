@@ -1,15 +1,10 @@
 import Image from 'next/image'
-
 import { getFirstAndLastInitialsUpperCase } from 'helpers/string'
+
 import * as S from './styles'
+import { AvatarProps } from './types'
 
-type Props = {
-  url?: string
-  name: string
-  description?: string
-}
-
-const ProfileImg = ({ url, name }: Omit<Props, 'description'>) => {
+const ProfileImg = ({ url, name }: Omit<AvatarProps, 'description'>) => {
   if (!url) {
     const avatarPlaceholder = getFirstAndLastInitialsUpperCase(name)
     return <S.AvatarPlaceholder>{avatarPlaceholder}</S.AvatarPlaceholder>
@@ -25,7 +20,7 @@ const ProfileImg = ({ url, name }: Omit<Props, 'description'>) => {
   )
 }
 
-const Avatar = ({ name, url, description }: Props) => {
+const Avatar = ({ name, url, description }: AvatarProps) => {
   return (
     <S.Container>
       <S.InfoContainer>

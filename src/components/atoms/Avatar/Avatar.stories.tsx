@@ -1,15 +1,15 @@
 import Avatar from './index'
 import { Meta, Story } from '@storybook/react'
+import { AvatarProps } from './types'
 
 export default {
   title: 'Avatar',
   component: Avatar
 } as Meta
 
-export const Primary: Story = (args) => (
-  <Avatar name="Thiago Juan" description="Student" {...args} />
-)
+export const Primary: Story<AvatarProps> = (args) => <Avatar {...args} />
 
 Primary.args = {
-  variant: 'primary'
+  name: 'Thiago Juan',
+  description: 'Web Developer'
 }
