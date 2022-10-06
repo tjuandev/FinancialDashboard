@@ -4,7 +4,7 @@ import Button from '.'
 import { ButtonProps } from './types'
 
 export default {
-  title: 'Breadcrumb',
+  title: 'Atoms/Button',
   component: Button
 } as Meta<typeof Button>
 

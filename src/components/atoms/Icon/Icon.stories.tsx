@@ -4,7 +4,7 @@ import Icon from '.'
 import { IconsProps } from './types'
 
 export default {
-  title: 'Breadcrumb',
+  title: 'Atoms/Icon',
   component: Icon
 } as Meta<typeof Icon>
 

@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react'
 import { AvatarProps } from './types'
 
 export default {
-  title: 'Avatar',
+  title: 'Atoms/Avatar',
   component: Avatar
 } as Meta
 

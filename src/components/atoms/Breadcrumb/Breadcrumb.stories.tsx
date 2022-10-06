@@ -5,7 +5,7 @@ import Icon from '../Icon'
 import { BreadcrumbProps } from './types'
 
 export default {
-  title: 'Breadcrumb',
+  title: 'Atoms/Breadcrumb',
   component: Breadcrumb
 } as Meta<typeof Breadcrumb>
 
