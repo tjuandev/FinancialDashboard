@@ -1,10 +1,6 @@
-type Props = {
-  color?: string
-  height?: string | number
-  width?: string | number
-}
+import { IconProps } from '../types'
 
-function Icon({ color, height = 22, width = 20 }: Props) {
+function Icon({ color, height = 22, width = 20 }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

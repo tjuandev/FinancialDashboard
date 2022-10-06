@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
-import { Notification } from 'assets/icons'
-import { Avatar, Breadcrumb, Button } from 'components/atoms'
+
+import { Avatar, Breadcrumb, Button, Icon } from 'components/atoms'
 
 import * as S from './styles'
 
@@ -17,7 +17,7 @@ const Default = ({ breadcrumbProps, avatarProps }: Props) => (
       </S.LeftSide>
       <S.RightSide>
         <Button>
-          <Notification />
+          <Icon name="notification" />
         </Button>
         {avatarProps && <Avatar {...avatarProps} />}
       </S.RightSide>
