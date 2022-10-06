@@ -53,6 +53,16 @@ module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
       },
       {
         type: 'add',
+        path: `${componentPath}/{{ name }}.stories.tsx`,
+        templateFile: 'templates/components/stories.tsx.hbs'
+      },
+      {
+        type: 'add',
+        path: `${componentPath}/types.ts`,
+        templateFile: 'templates/components/types.ts.hbs'
+      },
+      {
+        type: 'add',
         path: `${componentPath}/styles.tsx`,
         templateFile: 'templates/components/styles.tsx.hbs'
       }
