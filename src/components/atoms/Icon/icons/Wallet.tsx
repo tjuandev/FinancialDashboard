@@ -7,6 +7,8 @@ function Icon({ color, height = 38, width = 34 }: IconProps) {
       width={width}
       height={height}
       fill="none"
+      role="img"
+      aria-label="Wallet"
       viewBox="0 0 38 34"
     >
       <path
