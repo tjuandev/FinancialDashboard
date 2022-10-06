@@ -1,14 +1,5 @@
-import { MouseEventHandler, ReactNode, CSSProperties } from 'react'
 import * as S from './styles'
-
-type Props = {
-  children: ReactNode
-  onClick?: MouseEventHandler
-  padding?: string
-  width?: string
-  height?: string
-  buttonStyles?: CSSProperties
-}
+import { ButtonProps } from './types'
 
 const Button = ({
   children,
@@ -17,7 +8,7 @@ const Button = ({
   height = '40px',
   width = '40px',
   buttonStyles
-}: Props) => (
+}: ButtonProps) => (
   <S.Container
     height={height}
     width={width}
