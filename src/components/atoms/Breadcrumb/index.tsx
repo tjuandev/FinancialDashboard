@@ -1,12 +1,7 @@
-import { ReactNode } from 'react'
 import * as S from './styles'
+import { BreadcrumbProps } from './types'
 
-type Props = {
-  name: string
-  icon?: ReactNode
-}
-
-const Breadcrumb = ({ name, icon }: Props) => (
+const Breadcrumb = ({ name, icon }: BreadcrumbProps) => (
   <S.Container>
     <S.IconWrapper>{icon}</S.IconWrapper>
     <h1>{name}</h1>
