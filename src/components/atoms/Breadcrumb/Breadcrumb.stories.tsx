@@ -6,14 +6,7 @@ import { BreadcrumbProps } from './types'
 
 export default {
   title: 'Breadcrumb',
-  component: Breadcrumb,
-  argTypes: {
-    icon: {
-      name: 'Icon Name',
-      type: { name: '', required: false },
-      defaultValue: 'transactions'
-    }
-  }
+  component: Breadcrumb
 } as Meta<typeof Breadcrumb>
 
 export const Primary: Story<BreadcrumbProps> = (args) => (
