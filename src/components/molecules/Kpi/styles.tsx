@@ -20,4 +20,6 @@ export const Container = styled.div`
   background: ${theme.colors.secondary};
   color: ${theme.colors.primary};
 `
-export const Header = styled.header``
+export const Header = styled.header`
+  margin-bottom: ${theme.spacing[6]};
+`
