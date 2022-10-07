@@ -1,9 +1,18 @@
 import { cloneElement } from 'react'
 
 import { iconsLiterals } from './iconsLiterals'
-import { IconsProps } from './types'
+import { IconsLiteralsOptions, IconsProps } from './types'
 
-const Icon = ({ name, ...props }: IconsProps) =>
-  cloneElement(iconsLiterals[name], { ...props })
+const Icon = ({ name, ...props }: IconsProps) => {
+  if (name in iconsLiterals) {
+    return cloneElement(iconsLiterals[name as IconsLiteralsOptions], {
+      ...props
+    })
+  }
+
+  throw Error(
+    `Icon ${name} do not exists in icons object literals, please insert a valid name`
+  )
+}
 
 export default Icon
