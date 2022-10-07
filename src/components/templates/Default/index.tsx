@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
 import { Avatar, Breadcrumb, Button, Icon } from 'components/atoms'
 
@@ -7,9 +7,10 @@ import * as S from './styles'
 type Props = {
   breadcrumbProps?: ComponentProps<typeof Breadcrumb>
   avatarProps?: ComponentProps<typeof Avatar>
+  children?: ReactNode
 }
 
-const Default = ({ breadcrumbProps, avatarProps }: Props) => (
+const Default = ({ breadcrumbProps, avatarProps, children }: Props) => (
   <S.Container>
     <S.Header>
       <S.LeftSide>
@@ -22,6 +23,7 @@ const Default = ({ breadcrumbProps, avatarProps }: Props) => (
         {avatarProps && <Avatar {...avatarProps} />}
       </S.RightSide>
     </S.Header>
+    <S.Main>{children}</S.Main>
   </S.Container>
 )
 

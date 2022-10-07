@@ -9,6 +9,7 @@ export const Header = styled.header`
 
   padding: 24px 80px;
 `
+
 export const LeftSide = styled.div`
   display: flex;
   align-items: center;
@@ -20,3 +21,5 @@ export const RightSide = styled.div`
   align-items: center;
   gap: ${theme.spacing[8]};
 `
+
+export const Main = styled.main``
