@@ -4,8 +4,10 @@ import { KpiProps } from './types'
 
 const Kpi = ({ iconName, name, description }: KpiProps) => (
   <S.Container>
-    {iconName && <Icon name={iconName} />}
-    <h3>{name}</h3>
+    <S.IconWrapper>
+      {iconName && <Icon name={iconName} height="100%" width="100%" />}
+    </S.IconWrapper>
+    <h2>{name}</h2>
     <p>{description}</p>
   </S.Container>
 )
