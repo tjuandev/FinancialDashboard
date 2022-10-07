@@ -21,10 +21,3 @@ export const Container = styled.div`
   color: ${theme.colors.primary};
 `
 export const Header = styled.header``
-
-export const IconWrapper = styled.div`
-  margin-bottom: 1.5rem;
-
-  height: 2.25rem;
-  width: 2.25rem;
-`
