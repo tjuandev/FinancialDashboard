@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type DocumentTypeState = Document | null
 
@@ -7,7 +7,7 @@ type UseDocumentType = () => DocumentTypeState
 const useDocumentReference: UseDocumentType = () => {
   const [document, setDocument] = useState<DocumentTypeState>(null)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setDocument(window.document)
   }, [])
 
