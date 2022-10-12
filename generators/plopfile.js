@@ -44,7 +44,7 @@ module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
       {
         type: 'add',
         path: `${componentPath}/__tests__/{{pascalCase name}}.tsx`,
-        templateFile: 'templates/components/__tests__/index.tsx.hbs'
+        templateFile: 'templates/components/__tests__/index.test.tsx.hbs'
       },
       {
         type: 'add',
