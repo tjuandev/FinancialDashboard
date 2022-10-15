@@ -1,45 +1,36 @@
-import * as S from './styles'
-import { Icon } from 'components/atoms'
 import dynamic from 'next/dynamic'
+import { Props } from 'react-select'
+import theme from 'theme'
+
 import {
-  ControlProps,
-  components,
-  InputProps,
-  SingleValueProps
-} from 'react-select'
+  DropdownIndicator,
+  Control,
+  Input,
+  SingleValue
+} from './CustomComponents'
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false
 })
 
-const SingleValue = (props: SingleValueProps) => (
-  <S.SingleValueWrapper>
-    <components.SingleValue {...props} />
-  </S.SingleValueWrapper>
-)
-
-const Input = (props: InputProps) => (
-  <S.InputWrapper>
-    <components.Input {...props} />
-  </S.InputWrapper>
-)
-
-const Control = (props: ControlProps) => (
-  <S.SelectControlWrapper>
-    <components.Control {...props} />
-  </S.SelectControlWrapper>
-)
-
-const DropdownIndicator = () => <Icon name="chevron-down" />
-
-const BaseSelect = () => (
+const BaseSelect = ({ isSearchable = false, ...props }: Props) => (
   <Select
+    menuIsOpen={true}
+    isSearchable={isSearchable}
     components={{
       DropdownIndicator,
       Control,
       Input,
       SingleValue
     }}
+    theme={(defaultTheme) => ({
+      ...defaultTheme,
+      colors: {
+        ...defaultTheme.colors,
+        neutral50: theme.colors.placeholder
+      }
+    })}
+    {...props}
   />
 )
 
