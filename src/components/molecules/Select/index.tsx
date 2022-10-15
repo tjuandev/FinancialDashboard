@@ -15,7 +15,6 @@ const Select = dynamic(() => import('react-select'), {
 
 const BaseSelect = ({ isSearchable = false, ...props }: Props) => (
   <Select
-    menuIsOpen={true}
     isSearchable={isSearchable}
     components={{
       DropdownIndicator,
