@@ -9,7 +9,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
 
-  padding: ${theme.spacing[6]} 0;
+  padding-top: ${theme.spacing[6]};
 
   margin-bottom: ${theme.spacing[16]};
 `
