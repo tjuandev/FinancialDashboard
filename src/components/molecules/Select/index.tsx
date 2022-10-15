@@ -1,53 +1,46 @@
-import * as Select from '@radix-ui/react-select'
+import * as S from './styles'
 import { Icon } from 'components/atoms'
-import { v4 as uuid } from 'uuid'
-import { Options, Props, SelectInputProps, SelectOptionsProps } from './types'
+import dynamic from 'next/dynamic'
+import {
+  ControlProps,
+  components,
+  InputProps,
+  SingleValueProps
+} from 'react-select'
 
-const SelectInput = ({ placeholder, icon }: SelectInputProps) => (
-  <Select.Trigger>
-    <Select.Value placeholder={placeholder} />
-    <Select.Icon asChild={true}>{icon}</Select.Icon>
-  </Select.Trigger>
+const Select = dynamic(() => import('react-select'), {
+  ssr: false
+})
+
+const SingleValue = (props: SingleValueProps) => (
+  <S.SingleValueWrapper>
+    <components.SingleValue {...props} />
+  </S.SingleValueWrapper>
 )
 
-const SelectOptions = ({ value, label, itemIndicator }: SelectOptionsProps) => (
-  <Select.Item value={value}>
-    <Select.ItemText asChild={true}>{label}</Select.ItemText>
-    <Select.ItemIndicator asChild={true}>{itemIndicator}</Select.ItemIndicator>
-  </Select.Item>
+const Input = (props: InputProps) => (
+  <S.InputWrapper>
+    <components.Input {...props} />
+  </S.InputWrapper>
 )
 
-const renderOptions = (options: Options) =>
-  options?.map(({ group, groupLabel, ...item }) => {
-    if (group) {
-      return (
-        <>
-          <Select.Group>
-            <Select.Label asChild={true}>{groupLabel}</Select.Label>
-            <SelectOptions key={uuid()} {...item} />
-          </Select.Group>
-          <Select.Separator />
-        </>
-      )
-    }
-    return <SelectOptions key={uuid()} {...item} />
-  })
+const Control = (props: ControlProps) => (
+  <S.SelectControlWrapper>
+    <components.Control {...props} />
+  </S.SelectControlWrapper>
+)
 
-const BaseSelect = ({
-  placeholder,
-  icon = <Icon name="chevron-down" />,
-  options
-}: Props) => (
-  <Select.Root>
-    <SelectInput placeholder={placeholder} icon={icon} />
-    <Select.Portal>
-      <Select.Content>
-        <Select.ScrollUpButton />
-        <Select.Viewport>{renderOptions(options)}</Select.Viewport>
-        <Select.ScrollDownButton />
-      </Select.Content>
-    </Select.Portal>
-  </Select.Root>
+const DropdownIndicator = () => <Icon name="chevron-down" />
+
+const BaseSelect = () => (
+  <Select
+    components={{
+      DropdownIndicator,
+      Control,
+      Input,
+      SingleValue
+    }}
+  />
 )
 
 export default BaseSelect
