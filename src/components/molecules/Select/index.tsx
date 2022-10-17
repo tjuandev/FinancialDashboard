@@ -29,7 +29,6 @@ const newSelectorTheme = (defaultTheme: Theme) => ({
 
 const BaseSelect = ({ isSearchable = false, components, ...props }: Props) => (
   <Select
-    menuIsOpen={true}
     isSearchable={isSearchable}
     components={{
       DropdownIndicator,
