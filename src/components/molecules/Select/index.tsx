@@ -22,6 +22,7 @@ const newSelectorTheme = (defaultTheme: Theme) => ({
     neutral50: theme.colors.placeholder,
     neutral80: theme.colors.primary,
     primary25: theme.colors.tertiary,
+    primary50: theme.colors['primary-light'],
     primary: theme.colors.primary
   }
 })
