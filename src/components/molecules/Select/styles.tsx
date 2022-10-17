@@ -12,10 +12,6 @@ export const SelectControlWrapper = styled.div`
     padding: ${theme.spacing['2.5']} ${theme.spacing[4]};
 
     cursor: pointer;
-
-    :focus-within {
-      outline: 2px solid darkgreen !important;
-    }
   }
 
   > div > div {
