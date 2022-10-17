@@ -5,7 +5,9 @@ import {
   components,
   InputProps,
   SingleValueProps,
-  DropdownIndicatorProps
+  DropdownIndicatorProps,
+  MenuProps,
+  MenuListProps
 } from 'react-select'
 
 import { Icon } from 'components/atoms'
@@ -30,4 +32,16 @@ export const Control = (props: ControlProps) => (
   <S.SelectControlWrapper>
     <components.Control {...props} />
   </S.SelectControlWrapper>
+)
+
+export const Menu = (props: MenuProps) => (
+  <S.MenuWrapper>
+    <components.Menu {...props} />
+  </S.MenuWrapper>
+)
+
+export const MenuList = (props: MenuListProps) => (
+  <S.MenuListWrapper>
+    <components.MenuList {...props} />
+  </S.MenuListWrapper>
 )

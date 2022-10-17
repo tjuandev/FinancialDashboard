@@ -39,3 +39,20 @@ export const InputWrapper = styled.div`
     margin: 0;
   }
 `
+
+export const MenuWrapper = styled.div`
+  > div {
+    box-shadow: none;
+    background: ${theme.colors.secondary};
+    border-radius: ${theme.borderRadius.base};
+
+    padding: 0;
+  }
+`
+
+export const MenuListWrapper = styled.div`
+  > div {
+    padding: 0;
+    border-radius: ${theme.borderRadius.base};
+  }
+`
