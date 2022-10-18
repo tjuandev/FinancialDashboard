@@ -9,7 +9,7 @@ export const SelectControlWrapper = styled.div`
     border-radius: ${theme.borderRadius.base};
 
     display: flex;
-    padding: ${theme.spacing['2.5']} ${theme.spacing[4]};
+    padding: ${theme.spacing['2']} ${theme.spacing[4]};
 
     cursor: pointer;
   }
@@ -24,6 +24,8 @@ export const SingleValueWrapper = styled.div`
 
   > div {
     font-weight: ${theme.typography.fontWeights.semibold} !important;
+
+    margin: 0;
   }
 `
 
@@ -50,5 +52,9 @@ export const MenuListWrapper = styled.div`
   > div {
     padding: 0;
     border-radius: ${theme.borderRadius.base};
+  }
+
+  > div > div {
+    padding: ${theme.spacing['2']} ${theme.spacing[4]};
   }
 `
