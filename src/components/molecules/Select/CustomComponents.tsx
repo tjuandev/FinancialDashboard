@@ -17,31 +17,31 @@ export const DropdownIndicator = (props: DropdownIndicatorProps) => (
 )
 
 export const SingleValue = (props: SingleValueProps) => (
-  <S.SingleValueWrapper>
+  <S.SingleValueWrapper data-testid="SingleValue">
     <components.SingleValue {...props} />
   </S.SingleValueWrapper>
 )
 
 export const Input = (props: InputProps) => (
-  <S.InputWrapper>
+  <S.InputWrapper data-testid="Input">
     <components.Input {...props} />
   </S.InputWrapper>
 )
 
 export const Control = (props: ControlProps) => (
-  <S.SelectControlWrapper>
+  <S.SelectControlWrapper data-testid="Control">
     <components.Control {...props} />
   </S.SelectControlWrapper>
 )
 
 export const Menu = (props: MenuProps) => (
-  <S.MenuWrapper>
+  <S.MenuWrapper data-testid="Menu">
     <components.Menu {...props} />
   </S.MenuWrapper>
 )
 
 export const MenuList = (props: MenuListProps) => (
-  <S.MenuListWrapper>
+  <S.MenuListWrapper data-testid="MenuList">
     <components.MenuList {...props} />
   </S.MenuListWrapper>
 )
