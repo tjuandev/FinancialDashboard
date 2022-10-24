@@ -21,6 +21,7 @@ module.exports = {
     'src/components/molecules/index.ts',
     'src/components/organisms/index.ts',
     'src/components/templates/index.ts',
+    'src/hooks/index.ts',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
