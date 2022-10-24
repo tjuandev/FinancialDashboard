@@ -7,6 +7,7 @@ const Button = ({
   padding,
   height = '40px',
   width = '40px',
+  __hover,
   buttonStyles
 }: ButtonProps) => (
   <S.Container
@@ -15,6 +16,7 @@ const Button = ({
     onClick={onClick}
     padding={padding}
     style={buttonStyles}
+    __hover={__hover}
   >
     {children}
   </S.Container>

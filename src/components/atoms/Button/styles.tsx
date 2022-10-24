@@ -2,14 +2,9 @@ import styled from 'styled-components'
 
 import { onHoverInvertButtonColors } from 'styles/mixins'
 import theme from 'theme'
+import { ButtonWrapperProps } from './types'
 
-type ContainerProps = {
-  padding?: string
-  width: string
-  height: string
-}
-
-export const Container = styled.button<ContainerProps>`
+export const Container = styled.button<ButtonWrapperProps>`
   padding: ${({ padding }) => (padding ? padding : theme.spacing['2'])};
   border-radius: ${theme.borderRadius.base};
 
@@ -22,5 +17,8 @@ export const Container = styled.button<ContainerProps>`
   transition: ${theme.transitions.base};
   cursor: pointer;
 
-  ${onHoverInvertButtonColors(theme.colors.secondary, theme.colors.primary)}
+  ${({ __hover }) =>
+    __hover
+      ? __hover()
+      : onHoverInvertButtonColors(theme.colors.secondary, theme.colors.primary)}
 `
