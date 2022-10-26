@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import Button from '..'
@@ -11,31 +11,27 @@ describe('<Button />', () => {
   const user = userEvent.setup()
 
   it('Should render children', () => {
-    const { getByRole } = render(<Button>{buttonChildren}</Button>)
+    render(<Button>{buttonChildren}</Button>)
 
-    const buttonElement = getByRole('button')
+    const buttonElement = screen.getByRole('button')
     expect(buttonElement).toHaveTextContent(buttonChildren)
   })
 
   it('Should trigger onClick when get clicked', async () => {
     const onClick = jest.fn()
 
-    const { getByRole } = render(
-      <Button onClick={onClick}>{buttonChildren}</Button>
-    )
+    render(<Button onClick={onClick}>{buttonChildren}</Button>)
 
-    const buttonElement = getByRole('button')
+    const buttonElement = screen.getByRole('button')
     await user.click(buttonElement)
 
     expect(onClick).toHaveBeenCalledTimes(calledOneTime)
   })
 
   it('Should change padding if prop passed', () => {
-    const { getByRole } = render(
-      <Button padding="1rem">{buttonChildren}</Button>
-    )
+    render(<Button padding="1rem">{buttonChildren}</Button>)
 
-    const buttonElement = getByRole('button')
+    const buttonElement = screen.getByRole('button')
 
     expect(buttonElement).toHaveStyle({
       padding: '1rem'

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import Select from '..'
@@ -7,40 +7,40 @@ describe('<Select />', () => {
   const user = userEvent.setup()
 
   it('Should render chevron down icon as Dropdown Indicator', () => {
-    const { getByLabelText } = render(<Select />)
+    render(<Select />)
 
-    expect(getByLabelText(/chevronDown/i)).toBeInTheDocument()
+    const chevronDownIconElement = screen.getByLabelText(/chevronDown/i)
+
+    expect(chevronDownIconElement).toBeInTheDocument()
   })
 
   it('Should render single value custom component when user select a option', async () => {
-    const { getByTestId, getByText } = render(
-      <Select menuIsOpen options={[{ value: 'test', label: 'Test' }]} />
-    )
+    render(<Select menuIsOpen options={[{ value: 'test', label: 'Test' }]} />)
 
-    const testOption = getByText('Test')
+    const testOption = screen.getByText('Test')
 
     await user.click(testOption)
 
-    const singleValueElement = getByTestId('SingleValue')
+    const singleValueElement = screen.getByTestId('SingleValue')
 
     expect(singleValueElement).toBeInTheDocument()
   })
 
   it('Should render Menu and MenuList  custom components when select is opened', async () => {
-    const { getByTestId } = render(<Select menuIsOpen />)
+    render(<Select menuIsOpen />)
 
-    const menuElement = getByTestId('Menu')
-    const menuListElement = getByTestId('MenuList')
+    const menuElement = screen.getByTestId('Menu')
+    const menuListElement = screen.getByTestId('MenuList')
 
     expect(menuElement).toBeInTheDocument()
     expect(menuListElement).toBeInTheDocument()
   })
 
   it('Should render Input and Control custom components by default', async () => {
-    const { getByTestId } = render(<Select />)
+    render(<Select />)
 
-    const controlElement = getByTestId('Control')
-    const inputElement = getByTestId('Input')
+    const controlElement = screen.getByTestId('Control')
+    const inputElement = screen.getByTestId('Input')
 
     expect(controlElement).toBeInTheDocument()
     expect(inputElement).toBeInTheDocument()

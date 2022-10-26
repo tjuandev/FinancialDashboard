@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { runTestSilently } from 'helpers/tests'
 
 import Icon from '..'
@@ -6,9 +6,9 @@ import { IconsLiteralsOptions } from '../types'
 
 describe('<Icon />', () => {
   it('Should render icons based on name', () => {
-    const { getByLabelText } = render(<Icon name="notification" />)
+    render(<Icon name="notification" />)
 
-    const notificationIcon = getByLabelText(/notification/i)
+    const notificationIcon = screen.getByLabelText(/notification/i)
 
     expect(notificationIcon).toBeInTheDocument()
   })

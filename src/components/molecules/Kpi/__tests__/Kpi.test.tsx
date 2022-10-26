@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import Kpi from '..'
 
@@ -14,12 +14,10 @@ jest.mock('components/atoms', () => ({
 
 describe('<Kpi />', () => {
   it('Should render name and description if props passed', () => {
-    const { getByText } = render(
-      <Kpi name={kpiName} description={kpiDescription} />
-    )
+    render(<Kpi name={kpiName} description={kpiDescription} />)
 
-    const nameElement = getByText(kpiName)
-    const descriptionElement = getByText(kpiDescription)
+    const nameElement = screen.getByText(kpiName)
+    const descriptionElement = screen.getByText(kpiDescription)
 
     expect(nameElement).toBeInTheDocument()
     expect(descriptionElement).toBeInTheDocument()
