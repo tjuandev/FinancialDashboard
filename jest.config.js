@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
@@ -5,11 +6,22 @@ module.exports = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/stories.tsx'],
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!src/**/*.stories.@(js|jsx|ts|tsx)'
+  ],
   coveragePathIgnorePatterns: [
     'src/pages/_app.tsx',
     'src/pages/_document.tsx',
     'src/styles/',
+    'src/helpers/',
+    'src/assets/',
+    'src/components/atoms/index.ts',
+    'src/components/atoms/Icon/icons/',
+    'src/components/molecules/index.ts',
+    'src/components/organisms/index.ts',
+    'src/components/templates/index.ts',
+    'src/hooks/index.ts',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],

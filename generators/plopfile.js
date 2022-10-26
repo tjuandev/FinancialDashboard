@@ -9,11 +9,11 @@ const atomicDesignLayers = [
   },
   {
     name: 'Organism',
-    value: 'organism'
+    value: 'organisms'
   },
   {
     name: 'Template',
-    value: 'template'
+    value: 'templates'
   }
 ]
 
@@ -44,12 +44,22 @@ module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
       {
         type: 'add',
         path: `${componentPath}/__tests__/{{pascalCase name}}.tsx`,
-        templateFile: 'templates/components/__tests__/index.tsx.hbs'
+        templateFile: 'templates/components/__tests__/index.test.tsx.hbs'
       },
       {
         type: 'add',
         path: `${componentPath}/index.tsx`,
         templateFile: 'templates/components/index.tsx.hbs'
+      },
+      {
+        type: 'add',
+        path: `${componentPath}/{{ name }}.stories.tsx`,
+        templateFile: 'templates/components/stories.tsx.hbs'
+      },
+      {
+        type: 'add',
+        path: `${componentPath}/types.ts`,
+        templateFile: 'templates/components/types.ts.hbs'
       },
       {
         type: 'add',
