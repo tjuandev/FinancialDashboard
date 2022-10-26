@@ -6,17 +6,22 @@ import * as S from './styles'
 import { ExpandableInputProps } from './types'
 import { useClickOutside } from 'hooks'
 
-const IconButton = () => {
+const IconButton = ({ iconName }: Pick<ExpandableInputProps, 'iconName'>) => {
   return (
     <S.ButtonWrapper>
       <BaseButton width="44px" height="100%" __hover={() => ({})}>
-        <Icon name="search" />
+        <Icon name={iconName} />
       </BaseButton>
     </S.ButtonWrapper>
   )
 }
 
-const ExpandableIconButton = ({ onOpen, size }: ExpandableInputProps) => {
+const ExpandableIconButton = ({
+  onOpen,
+  size,
+  iconName = 'search',
+  placeholder
+}: ExpandableInputProps) => {
   const [open, setOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -31,6 +36,7 @@ const ExpandableIconButton = ({ onOpen, size }: ExpandableInputProps) => {
   }
 
   const handleClose = () => setOpen(false)
+
   const wrapperRef = useClickOutside<HTMLDivElement>({ onClick: handleClose })
 
   return (
@@ -41,11 +47,11 @@ const ExpandableIconButton = ({ onOpen, size }: ExpandableInputProps) => {
       aria-expanded={isExpanded}
       size={size}
     >
-      <IconButton />
+      <IconButton iconName={iconName} />
       <S.Input
         className={openClassName}
         type="text"
-        placeholder="Search..."
+        placeholder={placeholder}
         ref={inputRef}
       />
     </S.Wrapper>
