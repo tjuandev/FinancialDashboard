@@ -3,13 +3,18 @@ import { useRef, useState } from 'react'
 import { Button as BaseButton, Icon } from 'components/atoms'
 
 import * as S from './styles'
-import { ExpandableInputProps } from './types'
+import { ButtonProps, ExpandableInputProps } from './types'
 import { useClickOutside } from 'hooks'
 
-const IconButton = ({ iconName }: Pick<ExpandableInputProps, 'iconName'>) => {
+const IconButton = ({ iconName = 'search', onClick }: ButtonProps) => {
   return (
     <S.ButtonWrapper>
-      <BaseButton width="44px" height="100%" __hover={() => ({})}>
+      <BaseButton
+        width="44px"
+        height="100%"
+        __hover={() => ({})}
+        onClick={onClick}
+      >
         <Icon name={iconName} />
       </BaseButton>
     </S.ButtonWrapper>
@@ -19,7 +24,7 @@ const IconButton = ({ iconName }: Pick<ExpandableInputProps, 'iconName'>) => {
 const ExpandableIconButton = ({
   onOpen,
   size,
-  iconName = 'search',
+  iconName,
   placeholder
 }: ExpandableInputProps) => {
   const [open, setOpen] = useState(false)
@@ -43,11 +48,11 @@ const ExpandableIconButton = ({
     <S.Wrapper
       ref={wrapperRef}
       className={openClassName}
-      onClick={handleOpen}
       aria-expanded={isExpanded}
       size={size}
+      data-testid="container element"
     >
-      <IconButton iconName={iconName} />
+      <IconButton iconName={iconName} onClick={handleOpen} />
       <S.Input
         className={openClassName}
         type="text"
