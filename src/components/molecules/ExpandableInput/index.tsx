@@ -6,7 +6,7 @@ import * as S from './styles'
 import { ExpandableInputProps } from './types'
 import { useClickOutside } from 'hooks'
 
-const Button = () => {
+const IconButton = () => {
   return (
     <S.ButtonWrapper>
       <BaseButton width="44px" height="100%" __hover={() => ({})}>
@@ -41,7 +41,7 @@ const ExpandableIconButton = ({ onOpen, size }: ExpandableInputProps) => {
       aria-expanded={isExpanded}
       size={size}
     >
-      <Button />
+      <IconButton />
       <S.Input
         className={openClassName}
         type="text"

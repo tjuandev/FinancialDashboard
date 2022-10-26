@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import { onHoverInvertButtonColors } from 'styles/mixins'
 import theme from 'theme'
 import { ButtonWrapperProps } from './types'
 
@@ -17,8 +16,5 @@ export const Container = styled.button<ButtonWrapperProps>`
   transition: ${theme.transitions.base};
   cursor: pointer;
 
-  ${({ __hover }) =>
-    __hover
-      ? __hover()
-      : onHoverInvertButtonColors(theme.colors.secondary, theme.colors.primary)}
+  ${({ __hover }) => __hover && __hover}
 `
