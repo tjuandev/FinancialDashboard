@@ -45,7 +45,7 @@ const ExpandableIconButton = ({
   const wrapperRef = useClickOutside<HTMLDivElement>({ onClick: handleClose })
 
   return (
-    <S.Wrapper
+    <S.Container
       ref={wrapperRef}
       className={openClassName}
       aria-expanded={isExpanded}
@@ -59,7 +59,7 @@ const ExpandableIconButton = ({
         placeholder={placeholder}
         ref={inputRef}
       />
-    </S.Wrapper>
+    </S.Container>
   )
 }
 

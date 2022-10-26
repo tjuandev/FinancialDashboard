@@ -9,7 +9,7 @@ const sizes = {
   `
 }
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Container = styled.div<WrapperProps>`
   ${({ size = 'md' }) => sizes[size]}
 
   display: flex;
