@@ -8,12 +8,7 @@ import { ButtonProps, ExpandableInputProps } from './types'
 const IconButton = ({ iconName = 'search', onClick }: ButtonProps) => {
   return (
     <S.ButtonWrapper>
-      <BaseButton
-        width="44px"
-        height="100%"
-        __hover={() => ({})}
-        onClick={onClick}
-      >
+      <BaseButton __hover={() => ({})} onClick={onClick}>
         <Icon name={iconName} />
       </BaseButton>
     </S.ButtonWrapper>

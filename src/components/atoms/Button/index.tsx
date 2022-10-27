@@ -5,8 +5,8 @@ const Button = ({
   children,
   onClick,
   padding,
-  height = '40px',
-  width = '40px',
+  height = '44px',
+  width = '44px',
   __hover,
   buttonStyles
 }: ButtonProps) => (
