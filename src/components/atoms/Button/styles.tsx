@@ -17,7 +17,10 @@ export const Container = styled.button<ButtonWrapperProps>`
   transition: ${theme.transitions.base};
   cursor: pointer;
 
-  ${({ __hover }) => __hover && __hover}
+  :focus {
+    outline: 1px solid ${theme.colors.primary};
+  }
 
+  ${({ __hover }) => __hover && __hover}
   ${({ extraStyles }) => extraStyles}
 `
