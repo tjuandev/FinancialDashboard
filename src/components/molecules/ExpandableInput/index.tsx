@@ -4,7 +4,6 @@ import { Button as BaseButton, Icon } from 'components/atoms'
 
 import * as S from './styles'
 import { ButtonProps, ExpandableInputProps } from './types'
-import { useClickOutside } from 'hooks'
 
 const IconButton = ({ iconName = 'search', onClick }: ButtonProps) => {
   return (
@@ -43,11 +42,8 @@ const ExpandableIconButton = ({
 
   const handleClose = () => setOpen(false)
 
-  const wrapperRef = useClickOutside<HTMLDivElement>({ onClick: handleClose })
-
   return (
     <S.Container
-      ref={wrapperRef}
       className={openClassName}
       aria-expanded={isExpanded}
       size={size}
@@ -60,6 +56,7 @@ const ExpandableIconButton = ({
         type="text"
         placeholder={placeholder}
         ref={inputRef}
+        onBlur={handleClose}
       />
     </S.Container>
   )

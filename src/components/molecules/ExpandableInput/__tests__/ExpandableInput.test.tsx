@@ -12,16 +12,17 @@ jest.mock('components/atoms/Icon', () => () => <svg aria-label="icon-test" />)
 describe('<ExpandableIconButton />', () => {
   const user = userEvent.setup()
 
-  it('Should expand when get clicked', async () => {
-    render(<ExpandableIconButton placeholder="test" />)
+  it('Should expand with passed width when get clicked', async () => {
+    render(<ExpandableIconButton placeholder="test" expandedWidth="200px" />)
 
     const buttonElement = screen.getByRole('button')
     await user.click(buttonElement)
 
     const containerElement = screen.getByTestId('container-element')
 
+    expect(containerElement).toHaveAttribute('aria-expanded', 'true')
     expect(containerElement).toHaveStyle({
-      width: '300px'
+      width: '200px'
     })
   })
 
@@ -53,32 +54,20 @@ describe('<ExpandableIconButton />', () => {
     expect(inputElement).toHaveAttribute('placeholder', placeholderValue)
   })
 
-  it('Should shrink when click outside', async () => {
-    render(<ExpandableIconButton placeholder="test" />)
+  it('Should shrink lose focus', async () => {
+    const placeholderValue = 'test'
+    render(<ExpandableIconButton placeholder={placeholderValue} />)
 
     const buttonElement = screen.getByRole('button')
 
     await user.click(buttonElement)
-
-    const outsideComponent = document.body
-
-    await user.click(outsideComponent)
+    await user.click(document.body)
 
     const containerElement = screen.getByTestId('container-element')
 
     expect(containerElement).toHaveAttribute('aria-expanded', 'false')
-  })
-
-  it('Should apply custom expand width', async () => {
-    render(<ExpandableIconButton placeholder="test" expandedWidth="100px" />)
-
-    const buttonElement = screen.getByRole('button')
-    await user.click(buttonElement)
-
-    const containerElement = screen.getByTestId('container-element')
-
     expect(containerElement).toHaveStyle({
-      width: '100px'
+      width: '44px'
     })
   })
 })
