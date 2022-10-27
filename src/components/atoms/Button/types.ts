@@ -1,12 +1,12 @@
 import React, { MouseEventHandler, ReactNode } from 'react'
-import { CSSObject } from 'styled-components'
+import { CSSStyles } from 'styled-components'
 
 export type ButtonProps = {
   children: ReactNode
   onClick?: MouseEventHandler
   padding?: string
-  extraStyles?: CSSObject
-  __hover?: () => CSSObject
+  extraStyles?: CSSStyles
+  __hover?: () => CSSStyles
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonWrapperProps = Pick<
