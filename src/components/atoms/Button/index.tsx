@@ -5,18 +5,16 @@ const Button = ({
   children,
   onClick,
   padding,
-  height = '44px',
-  width = '44px',
   __hover,
-  buttonStyles
+  extraStyles,
+  ...buttonProps
 }: ButtonProps) => (
   <S.Container
-    height={height}
-    width={width}
     onClick={onClick}
     padding={padding}
-    style={buttonStyles}
+    extraStyles={extraStyles}
     __hover={__hover}
+    {...buttonProps}
   >
     {children}
   </S.Container>
