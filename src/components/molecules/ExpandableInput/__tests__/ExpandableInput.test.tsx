@@ -18,9 +18,11 @@ describe('<ExpandableIconButton />', () => {
     const buttonElement = screen.getByRole('button')
     await user.click(buttonElement)
 
-    const containerElement = screen.getByTestId('container element')
+    const containerElement = screen.getByTestId('container-element')
 
-    expect(containerElement).toHaveAttribute('aria-expanded', 'true')
+    expect(containerElement).toHaveStyle({
+      width: '300px'
+    })
   })
 
   it('Should call onOpen and inputFocus when getClicked', async () => {
@@ -62,8 +64,21 @@ describe('<ExpandableIconButton />', () => {
 
     await user.click(outsideComponent)
 
-    const containerElement = screen.getByTestId('container element')
+    const containerElement = screen.getByTestId('container-element')
 
     expect(containerElement).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('Should apply custom expand width', async () => {
+    render(<ExpandableIconButton placeholder="test" expandedWidth="100px" />)
+
+    const buttonElement = screen.getByRole('button')
+    await user.click(buttonElement)
+
+    const containerElement = screen.getByTestId('container-element')
+
+    expect(containerElement).toHaveStyle({
+      width: '100px'
+    })
   })
 })

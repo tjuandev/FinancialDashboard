@@ -25,7 +25,8 @@ const ExpandableIconButton = ({
   onOpen,
   size,
   iconName,
-  placeholder
+  placeholder,
+  expandedWidth = '300px'
 }: ExpandableInputProps) => {
   const [open, setOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -50,7 +51,8 @@ const ExpandableIconButton = ({
       className={openClassName}
       aria-expanded={isExpanded}
       size={size}
-      data-testid="container element"
+      data-testid="container-element"
+      expandedWidth={expandedWidth}
     >
       <IconButton iconName={iconName} onClick={handleOpen} />
       <S.Input
