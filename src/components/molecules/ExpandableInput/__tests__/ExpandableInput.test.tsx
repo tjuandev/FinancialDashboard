@@ -21,6 +21,7 @@ describe('<ExpandableIconButton />', () => {
     const containerElement = screen.getByTestId('container-element')
 
     expect(containerElement).toHaveAttribute('aria-expanded', 'true')
+
     expect(containerElement).toHaveStyle({
       width: '200px'
     })
@@ -54,7 +55,7 @@ describe('<ExpandableIconButton />', () => {
     expect(inputElement).toHaveAttribute('placeholder', placeholderValue)
   })
 
-  it('Should shrink lose focus', async () => {
+  it('Should shrink when lose focus', async () => {
     const placeholderValue = 'test'
     render(<ExpandableIconButton placeholder={placeholderValue} />)
 
@@ -66,8 +67,5 @@ describe('<ExpandableIconButton />', () => {
     const containerElement = screen.getByTestId('container-element')
 
     expect(containerElement).toHaveAttribute('aria-expanded', 'false')
-    expect(containerElement).toHaveStyle({
-      width: '44px'
-    })
   })
 })
