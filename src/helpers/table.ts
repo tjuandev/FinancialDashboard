@@ -1,7 +1,13 @@
-import { createColumnHelper } from '@tanstack/react-table'
+import { ColumnHelper, createColumnHelper } from '@tanstack/react-table'
 
-export const generateTableColumns = <CreateColumnType>() => {
-  const columnHelper = createColumnHelper<CreateColumnType>()
+export const generateTableColumns = <
+  CreateColumnType
+>(): ColumnHelper<CreateColumnType> => {
+  const { accessor, display, group } = createColumnHelper<CreateColumnType>()
 
-  return columnHelper
+  return {
+    accessor,
+    display,
+    group
+  }
 }
