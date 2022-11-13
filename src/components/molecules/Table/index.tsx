@@ -19,6 +19,8 @@ const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
     getCoreRowModel: getCoreRowModel()
   })
 
+  console.log(table.getHeaderGroups())
+
   return (
     <table>
       <thead>
@@ -26,12 +28,10 @@ const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
               <th key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
               </th>
             ))}
           </tr>
