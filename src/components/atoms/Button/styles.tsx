@@ -20,11 +20,7 @@ export const Container = styled.button<ButtonWrapperProps>`
 
   ${({ colorSchema = 'primary' }) => buttonColorSchema[colorSchema]}
 
-  padding: ${({ padding, basic }) => {
-    if (basic) return
-
-    return padding ? padding : theme.spacing['2']
-  }};
+  padding: ${({ padding }) => (padding ? padding : theme.spacing['2'])};
 
   border-radius: ${theme.borderRadius.base};
 
