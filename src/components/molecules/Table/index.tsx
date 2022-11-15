@@ -6,7 +6,7 @@ import {
 
 import { Column, Table } from './styles'
 import { useState } from 'react'
-import { TableProps, THeadProps } from './types'
+import { TableProps, TBodyProps, THeadProps } from './types'
 
 const THead = <ColumnType,>({
   table,
@@ -38,6 +38,26 @@ const THead = <ColumnType,>({
   )
 }
 
+const TBody = <ColumnType,>({ table }: TBodyProps<ColumnType>) => {
+  return (
+    <tbody>
+      {table.getRowModel().rows.map((row) => {
+        return (
+          <tr key={row.id}>
+            {row.getVisibleCells().map((cell) => {
+              return (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              )
+            })}
+          </tr>
+        )
+      })}
+    </tbody>
+  )
+}
+
 const View = <ColumnType,>(props: TableProps<ColumnType>) => {
   const { columns, rows, columnsExtensions } = props
 
@@ -52,17 +72,7 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
   return (
     <Table>
       <THead table={table} columnsExtensions={columnsExtensions} />
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
+      <TBody table={table} />
     </Table>
   )
 }

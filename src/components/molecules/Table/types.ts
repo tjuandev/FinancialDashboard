@@ -22,4 +22,6 @@ export type THeadProps<ColumnType> = {
   columnsExtensions?: ColumnExtensions
 }
 
+export type TBodyProps<ColumnType> = Pick<THeadProps<ColumnType>, 'table'>
+
 export type ColumnProps = ColumnExtension
