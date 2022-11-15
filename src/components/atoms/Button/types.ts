@@ -1,10 +1,12 @@
 import React, { MouseEventHandler, ReactNode } from 'react'
 import { CSSStyles } from 'styled-components'
+import { buttonColorSchema } from './styles'
 
 export type ButtonProps = {
   children: ReactNode
   onClick?: MouseEventHandler
   padding?: string
+  colorSchema?: keyof typeof buttonColorSchema
   basic?: boolean
   extraStyles?: CSSStyles
   __hover?: () => CSSStyles
@@ -12,5 +14,5 @@ export type ButtonProps = {
 
 export type ButtonWrapperProps = Pick<
   ButtonProps,
-  '__hover' | 'padding' | 'extraStyles' | 'basic'
+  '__hover' | 'padding' | 'extraStyles' | 'basic' | 'colorSchema'
 >
