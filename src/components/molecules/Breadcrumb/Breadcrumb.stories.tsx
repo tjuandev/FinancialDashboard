@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/react'
 
 import Breadcrumb from '.'
-import Icon from '../Icon'
 import { BreadcrumbProps } from './types'
+import { Icon } from 'components/atoms'
 
 export default {
   title: 'Atoms/Breadcrumb',

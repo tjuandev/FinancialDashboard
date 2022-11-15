@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode } from 'react'
 
-import { Avatar, Breadcrumb, Button, Icon } from 'components/atoms'
+import { Avatar, Button, Icon } from 'components/atoms'
+import { Breadcrumb } from 'components/molecules'
 
 import * as S from './styles'
 
