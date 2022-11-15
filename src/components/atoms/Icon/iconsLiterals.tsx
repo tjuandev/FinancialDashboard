@@ -5,6 +5,8 @@ import StockUp from './icons/StockUp'
 import StockDown from './icons/StockDown'
 import ChevronDown from './icons/ChevronDown'
 import Search from './icons/Search'
+import OutlinedEdit from './icons/OutlinedEdit'
+import OutlinedTrash from './icons/OutlinedTrash'
 
 export const iconsLiterals = {
   transactions: <Transactions />,
@@ -13,5 +15,7 @@ export const iconsLiterals = {
   'stock-up': <StockUp />,
   'stock-down': <StockDown />,
   'chevron-down': <ChevronDown />,
-  search: <Search />
+  search: <Search />,
+  'outlined-edit': <OutlinedEdit />,
+  'outlined-trash': <OutlinedTrash />
 }

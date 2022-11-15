@@ -5,9 +5,13 @@ export type ExpandableInputProps = {
   size?: 'md'
   placeholder: string
   iconName?: IconsLiteralsOptions
+  expandedWidth?: string
 }
 
-export type WrapperProps = Pick<ExpandableInputProps, 'size'>
+export type ContainerProps = Pick<
+  ExpandableInputProps,
+  'size' | 'expandedWidth'
+>
 
 export type ButtonProps = {
   iconName?: IconsLiteralsOptions

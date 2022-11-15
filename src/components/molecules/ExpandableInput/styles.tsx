@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import theme from 'theme'
-import { WrapperProps } from './types'
+import { ContainerProps } from './types'
 
 const sizes = {
   md: css`
@@ -9,7 +9,7 @@ const sizes = {
   `
 }
 
-export const Container = styled.div<WrapperProps>`
+export const Container = styled.div<ContainerProps>`
   ${({ size = 'md' }) => sizes[size]}
 
   display: flex;
@@ -24,7 +24,7 @@ export const Container = styled.div<WrapperProps>`
   cursor: pointer;
 
   &.open {
-    width: 300px;
+    width: ${({ expandedWidth }) => expandedWidth};
   }
 
   :not(.open):hover {
