@@ -4,11 +4,40 @@ import {
   useReactTable
 } from '@tanstack/react-table'
 
+import { Column, Table } from './styles'
 import { useState } from 'react'
+import { TableProps, THeadProps } from './types'
 
-import { TableProps } from './types'
+const THead = <ColumnType,>({
+  table,
+  columnsExtensions
+}: THeadProps<ColumnType>) => {
+  return (
+    <thead>
+      {table.getHeaderGroups().map((headerGroup) => (
+        <tr key={headerGroup.id}>
+          {headerGroup.headers.map((header) => {
+            let columnProps
+            if (columnsExtensions) {
+              columnProps = columnsExtensions.find(({ id }) => id === header.id)
+            }
 
-const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
+            return (
+              <Column key={header.id} {...columnProps}>
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
+              </Column>
+            )
+          })}
+        </tr>
+      ))}
+    </thead>
+  )
+}
+
+const View = <ColumnType,>(props: TableProps<ColumnType>) => {
   const { columns, rows } = props
 
   const [data] = useState([...rows])
@@ -19,24 +48,9 @@ const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
     getCoreRowModel: getCoreRowModel()
   })
 
-  console.log(table.getHeaderGroups())
-
   return (
-    <table>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <th key={header.id}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
+    <Table>
+      <THead table={table} />
       <tbody>
         {table.getRowModel().rows.map((row) => (
           <tr key={row.id}>
@@ -48,8 +62,8 @@ const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   )
 }
 
-export default Table
+export default View
