@@ -5,11 +5,12 @@ export type ButtonProps = {
   children: ReactNode
   onClick?: MouseEventHandler
   padding?: string
+  basic?: boolean
   extraStyles?: CSSStyles
   __hover?: () => CSSStyles
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonWrapperProps = Pick<
   ButtonProps,
-  '__hover' | 'padding' | 'extraStyles'
+  '__hover' | 'padding' | 'extraStyles' | 'basic'
 >

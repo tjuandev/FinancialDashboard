@@ -8,7 +8,13 @@ export const Container = styled.button<ButtonWrapperProps>`
   width: 44px;
 
   background-color: ${theme.colors.secondary};
-  padding: ${({ padding }) => (padding ? padding : theme.spacing['2'])};
+
+  padding: ${({ padding, basic }) => {
+    if (basic) return
+
+    return padding ? padding : theme.spacing['2']
+  }};
+
   border-radius: ${theme.borderRadius.base};
 
   font-size: 1rem;
