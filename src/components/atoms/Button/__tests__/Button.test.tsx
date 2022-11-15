@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import theme from 'theme'
 
 import Button from '..'
 
@@ -10,7 +11,7 @@ const buttonChildren = 'Test'
 describe('<Button />', () => {
   const user = userEvent.setup()
 
-  it('Should render children', () => {
+  it('Should render childrean', () => {
     render(<Button>{buttonChildren}</Button>)
 
     const buttonElement = screen.getByRole('button')
@@ -35,6 +36,17 @@ describe('<Button />', () => {
 
     expect(buttonElement).toHaveStyle({
       padding: '1rem'
+    })
+  })
+
+  it('Should change button color based on colorSchema', () => {
+    render(<Button colorSchema="primary">{buttonChildren}</Button>)
+
+    const buttonElement = screen.getByRole('button')
+
+    expect(buttonElement).toHaveStyle({
+      backgroundColor: theme.colors.secondary,
+      color: theme.colors.primary
     })
   })
 })
