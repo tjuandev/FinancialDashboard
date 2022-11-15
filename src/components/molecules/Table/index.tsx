@@ -18,6 +18,7 @@ const THead = <ColumnType,>({
         <tr key={headerGroup.id}>
           {headerGroup.headers.map((header) => {
             let columnProps
+
             if (columnsExtensions) {
               columnProps = columnsExtensions.find(({ id }) => id === header.id)
             }
@@ -38,7 +39,7 @@ const THead = <ColumnType,>({
 }
 
 const View = <ColumnType,>(props: TableProps<ColumnType>) => {
-  const { columns, rows } = props
+  const { columns, rows, columnsExtensions } = props
 
   const [data] = useState([...rows])
 
@@ -50,7 +51,7 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
 
   return (
     <Table>
-      <THead table={table} />
+      <THead table={table} columnsExtensions={columnsExtensions} />
       <tbody>
         {table.getRowModel().rows.map((row) => (
           <tr key={row.id}>

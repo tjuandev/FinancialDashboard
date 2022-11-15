@@ -34,6 +34,8 @@ export const Table = styled.table`
   }
 `
 export const Column = styled.th<ColumnProps>`
+  width: ${({ width }) => width};
+
   color: ${theme.colors.tertiary};
   padding: 10px 16px;
   text-align: left;
