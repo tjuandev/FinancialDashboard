@@ -4,9 +4,22 @@ import {
   useReactTable
 } from '@tanstack/react-table'
 
-import { Column, Table } from './styles'
+import { Column, Row, Table } from './styles'
 import { useState } from 'react'
-import { TableProps, TBodyProps, THeadProps } from './types'
+import {
+  ColumnExtension,
+  ColumnExtensions,
+  TableProps,
+  TBodyProps,
+  THeadProps
+} from './types'
+
+const getColumnExtensionsProps = (
+  columnsExtensions?: ColumnExtensions,
+  currentCellId?: string
+): ColumnExtension | undefined => {
+  return columnsExtensions?.find(({ id }) => id === currentCellId)
+}
 
 const THead = <ColumnType,>({
   table,
@@ -17,18 +30,16 @@ const THead = <ColumnType,>({
       {table.getHeaderGroups().map((headerGroup) => (
         <tr key={headerGroup.id}>
           {headerGroup.headers.map((header) => {
-            let columnProps
+            const { id, column, getContext } = header
 
-            if (columnsExtensions) {
-              columnProps = columnsExtensions.find(({ id }) => id === header.id)
-            }
+            const columnExtensions = getColumnExtensionsProps(
+              columnsExtensions,
+              id
+            )
 
             return (
-              <Column key={header.id} {...columnProps}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
+              <Column key={id} {...columnExtensions}>
+                {flexRender(column.columnDef.header, getContext())}
               </Column>
             )
           })}
@@ -38,17 +49,32 @@ const THead = <ColumnType,>({
   )
 }
 
-const TBody = <ColumnType,>({ table }: TBodyProps<ColumnType>) => {
+const TBody = <ColumnType,>({
+  table,
+  columnsExtensions
+}: TBodyProps<ColumnType>) => {
   return (
     <tbody>
       {table.getRowModel().rows.map((row) => {
         return (
           <tr key={row.id}>
             {row.getVisibleCells().map((cell) => {
+              const {
+                column: { id }
+              } = cell
+
+              const columnExtensions = getColumnExtensionsProps(
+                columnsExtensions,
+                id
+              )
+
               return (
-                <td key={cell.id}>
+                <Row
+                  key={cell.id}
+                  horizontalAlign={columnExtensions?.horizontalAlign}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
+                </Row>
               )
             })}
           </tr>
@@ -72,7 +98,7 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
   return (
     <Table>
       <THead table={table} columnsExtensions={columnsExtensions} />
-      <TBody table={table} />
+      <TBody table={table} columnsExtensions={columnsExtensions} />
     </Table>
   )
 }

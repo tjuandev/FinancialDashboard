@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'theme'
-import { ColumnProps } from './types'
+import { ColumnProps, RowProps } from './types'
 
 export const Table = styled.table`
   width: 100%;
@@ -47,5 +47,9 @@ export const Column = styled.th<ColumnProps>`
     border-radius: 0 16px 0 0;
   }
 
+  text-align: ${({ horizontalAlign }) => horizontalAlign};
+`
+
+export const Row = styled.td<RowProps>`
   text-align: ${({ horizontalAlign }) => horizontalAlign};
 `
