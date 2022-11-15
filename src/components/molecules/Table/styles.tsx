@@ -25,11 +25,11 @@ export const Table = styled.table`
     padding: 0 16px;
   }
 
-  td:first-child {
+  tr:last-child td:first-child {
     border-radius: 0 0 0 16px;
   }
 
-  td:last-child {
+  tr:last-child td:last-child {
     border-radius: 0 0 16px 0;
   }
 `
