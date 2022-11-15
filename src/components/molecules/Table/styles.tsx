@@ -46,4 +46,6 @@ export const Column = styled.th<ColumnProps>`
   :last-child {
     border-radius: 0 16px 0 0;
   }
+
+  text-align: ${({ horizontalAlign }) => horizontalAlign};
 `
