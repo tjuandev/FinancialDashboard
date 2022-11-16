@@ -1,29 +1,10 @@
-import { ComponentProps, ReactNode } from 'react'
-
-import { Avatar, Button, Icon } from 'components/atoms'
-import { Breadcrumb } from 'components/molecules'
-
 import * as S from './styles'
+import { Header } from 'components/organisms'
+import { Props } from './types'
 
-type Props = {
-  breadcrumbProps?: ComponentProps<typeof Breadcrumb>
-  avatarProps?: ComponentProps<typeof Avatar>
-  children?: ReactNode
-}
-
-const Default = ({ breadcrumbProps, avatarProps, children }: Props) => (
+const Default = ({ headerProps, children }: Props) => (
   <S.Container>
-    <S.Header>
-      <S.LeftSide>
-        {breadcrumbProps && <Breadcrumb {...breadcrumbProps} />}
-      </S.LeftSide>
-      <S.RightSide>
-        <Button>
-          <Icon name="notification" />
-        </Button>
-        {avatarProps && <Avatar {...avatarProps} />}
-      </S.RightSide>
-    </S.Header>
+    <Header {...headerProps} />
     <S.Main>{children}</S.Main>
   </S.Container>
 )
