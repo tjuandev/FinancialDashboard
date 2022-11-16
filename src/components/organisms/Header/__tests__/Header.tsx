@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import Header from '..'
 
@@ -7,19 +7,17 @@ const profileName = 'Test'
 
 describe('<Header />', () => {
   it('Should render breadcrumb if breadcrumb props is passed', () => {
-    const { getByText } = render(
-      <Header breadcrumbProps={{ name: pageName }} />
-    )
+    render(<Header breadcrumbProps={{ name: pageName }} />)
 
-    const breadcrumbNameElement = getByText(pageName)
+    const breadcrumbNameElement = screen.getByText(pageName)
 
     expect(breadcrumbNameElement).toBeInTheDocument()
   })
 
   it('Should render avatar if avatar props is passed', () => {
-    const { getByText } = render(<Header avatarProps={{ name: profileName }} />)
+    render(<Header avatarProps={{ name: profileName }} />)
 
-    const breadcrumbNameElement = getByText(profileName)
+    const breadcrumbNameElement = screen.getByText(profileName)
 
     expect(breadcrumbNameElement).toBeInTheDocument()
   })
