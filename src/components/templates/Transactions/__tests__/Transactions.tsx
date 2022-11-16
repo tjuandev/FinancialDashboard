@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
-import Default from '..'
+import Transactions from '..'
 
-describe('<Default />', () => {
+describe('<Transactions />', () => {
   it('Should match snapshot', () => {
     const { container } = render(
-      <Default
+      <Transactions
         headerProps={{
           avatarProps: {
             name: 'User Test'
