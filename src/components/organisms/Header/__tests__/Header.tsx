@@ -6,19 +6,18 @@ const pageName = 'Page'
 const profileName = 'Test'
 
 describe('<Header />', () => {
-  it('Should render breadcrumb if breadcrumb props is passed', () => {
-    render(<Header breadcrumbProps={{ name: pageName }} />)
+  it('Should render breadcrumb and avatar if props is passed', () => {
+    render(
+      <Header
+        breadcrumbProps={{ name: pageName }}
+        avatarProps={{ name: profileName }}
+      />
+    )
 
     const breadcrumbNameElement = screen.getByText(pageName)
+    const avatarNameElement = screen.getByText(profileName)
 
-    expect(breadcrumbNameElement).toBeInTheDocument()
-  })
-
-  it('Should render avatar if avatar props is passed', () => {
-    render(<Header avatarProps={{ name: profileName }} />)
-
-    const breadcrumbNameElement = screen.getByText(profileName)
-
+    expect(avatarNameElement).toBeInTheDocument()
     expect(breadcrumbNameElement).toBeInTheDocument()
   })
 })
