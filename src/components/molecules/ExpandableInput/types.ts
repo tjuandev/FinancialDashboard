@@ -1,10 +1,10 @@
-import { IconsLiteralsOptions } from 'components/atoms/Icon/types'
+import { IconLiterals } from 'types/icons'
 
 export type ExpandableInputProps = {
   onOpen?: () => void
   size?: 'md'
   placeholder: string
-  iconName?: IconsLiteralsOptions
+  iconName?: IconLiterals
   expandedWidth?: string
 }
 
@@ -14,6 +14,6 @@ export type ContainerProps = Pick<
 >
 
 export type ButtonProps = {
-  iconName?: IconsLiteralsOptions
+  iconName?: IconLiterals
   onClick: () => void
 }
