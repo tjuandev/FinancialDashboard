@@ -77,7 +77,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   outline: 1px solid #14404D;
 }
 
-.c21 {
+.c22 {
   height: 44px;
   width: 44px;
   background-color: #14404D;
@@ -91,11 +91,11 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c21:focus {
+.c22:focus {
   outline: 1px solid #14404D;
 }
 
-.c28 {
+.c29 {
   height: 44px;
   width: 44px;
   background-color: #CDDBC2;
@@ -112,11 +112,11 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   border-radius: 0.625rem;
 }
 
-.c28:focus {
+.c29:focus {
   outline: 1px solid #14404D;
 }
 
-.c28:hover {
+.c29:hover {
   -webkit-filter: brightness(0.9);
   filter: brightness(0.9);
 }
@@ -133,6 +133,10 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   padding: 0 5rem;
 }
 
+.c15 {
+  width: 148px;
+}
+
 .c14 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -147,7 +151,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   width: 1143px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -155,7 +159,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   gap: 1rem;
 }
 
-.c27 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,7 +172,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   margin: 0.25rem 0;
 }
 
-.c22 {
+.c23 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -184,7 +188,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   padding: 12px 16px;
 }
 
-.c22:hover {
+.c23:hover {
   -webkit-filter: brightness(0.9);
   filter: brightness(0.9);
 }
@@ -211,7 +215,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   margin-bottom: 1.5rem;
 }
 
-.c15 > div {
+.c16 > div {
   border: none;
   background: #CDDBC2;
   border-radius: 0.625rem;
@@ -223,20 +227,20 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c15 > div > div {
+.c16 > div > div {
   padding: 0;
 }
 
-.c16 {
+.c17 {
   grid-area: 1/1/2/3;
 }
 
-.c16 > div {
+.c17 > div {
   padding: 0;
   margin: 0;
 }
 
-.c18 {
+.c19 {
   height: 44px;
   width: 44px;
   display: -webkit-box;
@@ -256,20 +260,20 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c18.open {
+.c19.open {
   width: 300px;
 }
 
-.c18:not(.open):hover {
+.c19:not(.open):hover {
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
 }
 
-.c18:focus-within {
+.c19:focus-within {
   outline: 0.5px solid #14404D;
 }
 
-.c20 {
+.c21 {
   position: relative;
   margin: 0 16px 0 40px;
   background: transparent;
@@ -281,16 +285,16 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   width: 0;
 }
 
-.c20:focus {
+.c21:focus {
   outline: 0;
 }
 
-.c20.open {
+.c21.open {
   opacity: 1;
   width: 100%;
 }
 
-.c19 > button {
+.c20 > button {
   position: absolute;
   top: 0;
   left: 0;
@@ -318,56 +322,41 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   height: 24px;
 }
 
-.c23 {
+.c24 {
   width: 100%;
   border-collapse: collapse;
 }
 
-.c23 thead {
+.c24 thead {
   background: #14404D;
   border-radius: 1rem;
 }
 
-.c23 tbody {
+.c24 tbody {
   background: #CDDBC2;
 }
 
-.c23 th,
-.c23 td {
+.c24 th,
+.c24 td {
   font-size: 14px;
 }
 
-.c23 td {
+.c24 td {
   padding: 0 16px;
 }
 
-.c23 tr:last-child td:first-child {
+.c24 tr:last-child td:first-child {
   border-radius: 0 0 0 16px;
 }
 
-.c23 tr:last-child td:last-child {
+.c24 tr:last-child td:last-child {
   border-radius: 0 0 16px 0;
-}
-
-.c24 {
-  color: #DCE5D5;
-  padding: 10px 16px;
-  text-align: left;
-}
-
-.c24:first-child {
-  border-radius: 16px 0 0 0;
-}
-
-.c24:last-child {
-  border-radius: 0 16px 0 0;
 }
 
 .c25 {
   color: #DCE5D5;
   padding: 10px 16px;
   text-align: left;
-  text-align: end;
 }
 
 .c25:first-child {
@@ -379,6 +368,21 @@ exports[`<Transactions /> Should match snapshot 1`] = `
 }
 
 .c26 {
+  color: #DCE5D5;
+  padding: 10px 16px;
+  text-align: left;
+  text-align: end;
+}
+
+.c26:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.c26:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.c27 {
   text-align: end;
 }
 
@@ -611,7 +615,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
         class="c14"
       >
         <div
-          class=""
+          class="c15"
         >
           <div
             class=" css-b62m3t-container"
@@ -627,7 +631,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               class="css-1f43avz-a11yText-A11yText"
             />
             <div
-              class="c15"
+              class="c16"
               data-testid="Control"
             >
               <div
@@ -643,7 +647,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                     Select...
                   </div>
                   <div
-                    class="c16"
+                    class="c17"
                     data-testid="Input"
                   >
                     <div
@@ -699,15 +703,15 @@ exports[`<Transactions /> Should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c17"
+          class="c18"
         >
           <div
             aria-expanded="false"
-            class="c18"
+            class="c19"
             data-testid="container-element"
           >
             <div
-              class="c19"
+              class="c20"
             >
               <button
                 class="c6"
@@ -730,13 +734,13 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               </button>
             </div>
             <input
-              class="c20"
+              class="c21"
               placeholder="Type something..."
               type="text"
             />
           </div>
           <button
-            class="c21 c22"
+            class="c22 c23"
           >
             Nova Entrada 
             <svg
@@ -758,32 +762,32 @@ exports[`<Transactions /> Should match snapshot 1`] = `
         </div>
       </div>
       <table
-        class="c23"
+        class="c24"
       >
         <thead>
           <tr>
             <th
-              class="c24"
+              class="c25"
             >
               Type
             </th>
             <th
-              class="c24"
+              class="c25"
             >
               Date
             </th>
             <th
-              class="c24"
+              class="c25"
             >
               Description
             </th>
             <th
-              class="c24"
+              class="c25"
             >
               Value
             </th>
             <th
-              class="c25"
+              class="c26"
               id="actions"
             >
               Actions
@@ -813,13 +817,13 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               2000
             </td>
             <td
-              class="c26"
+              class="c27"
             >
               <div
-                class="c27"
+                class="c28"
               >
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
@@ -838,7 +842,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                   </svg>
                 </button>
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
@@ -888,13 +892,13 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               2000
             </td>
             <td
-              class="c26"
+              class="c27"
             >
               <div
-                class="c27"
+                class="c28"
               >
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
@@ -913,7 +917,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                   </svg>
                 </button>
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
@@ -963,13 +967,13 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               2000
             </td>
             <td
-              class="c26"
+              class="c27"
             >
               <div
-                class="c27"
+                class="c28"
               >
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
@@ -988,7 +992,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                   </svg>
                 </button>
                 <button
-                  class="c28"
+                  class="c29"
                 >
                   <svg
                     fill="none"
