@@ -9,6 +9,7 @@ import { Props } from './types'
 import { IconLiterals } from 'types/icons'
 
 import { v4 as uuid } from 'uuid'
+import TransactionsTable from './TransactionsTable'
 
 const kpisMock = [
   {
@@ -29,7 +30,7 @@ const kpisMock = [
 ]
 
 const KPIs = () => (
-  <>
+  <Grid columns="repeat(3, 290px)" gap={8}>
     {kpisMock.map(({ iconName, ...kpiProps }) => (
       <Kpi
         headerChildren={<Icon name={iconName as IconLiterals} />}
@@ -37,35 +38,41 @@ const KPIs = () => (
         {...kpiProps}
       />
     ))}
-  </>
+  </Grid>
+)
+
+const TransactionsSelector = () => (
+  <S.TransactionsSelectorWrapper>
+    <Select
+      defaultValue="all"
+      options={[
+        { value: 'all', label: 'Todas' },
+        { value: 'incomes', label: 'Ganhos' },
+        { value: 'outcomes', label: 'Despesas' }
+      ]}
+    />
+  </S.TransactionsSelectorWrapper>
+)
+
+const Toolbar = () => (
+  <S.ToolbarContainer>
+    <TransactionsSelector />
+    <S.ToolbarLeftSide>
+      <ExpandableInput placeholder="Type something..." />
+      <S.NewEntryButton colorSchema="secondary">
+        Nova Entrada <Icon name="plus" />
+      </S.NewEntryButton>
+    </S.ToolbarLeftSide>
+  </S.ToolbarContainer>
 )
 
 const Transactions = ({ headerProps }: Props) => (
   <S.Container>
     <Header {...headerProps} />
     <S.Main>
-      <Grid columns="repeat(3, 290px)" gap={8}>
-        <KPIs />
-      </Grid>
-      <S.ToolbarContainer>
-        <div style={{ width: '148px' }}>
-          <Select
-            defaultValue="all"
-            options={[
-              { value: 'all', label: 'Todas' },
-              { value: 'incomes', label: 'Ganhos' },
-              { value: 'outcomes', label: 'Despesas' }
-            ]}
-          />
-        </div>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <ExpandableInput placeholder="Type something..." />
-          <S.NewEntryButton colorSchema="secondary">
-            {/* NOTE Melhorar o jeito como esse botão é feito, sugestões: colocar os estilos como variantes do botão; colocar label como prop e passar icon dentro */}
-            Nova Entrada <Icon name="plus" />
-          </S.NewEntryButton>
-        </div>
-      </S.ToolbarContainer>
+      <KPIs />
+      <Toolbar />
+      <TransactionsTable />
     </S.Main>
   </S.Container>
 )

@@ -6,6 +6,8 @@ export const Container = styled.div`
   padding: 0 ${theme.spacing[20]};
 `
 
+export const TransactionsSelectorWrapper = styled.div``
+
 export const ToolbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -14,6 +16,11 @@ export const ToolbarContainer = styled.div`
   margin-bottom: 24px;
 
   width: 1143px;
+`
+
+export const ToolbarLeftSide = styled.div`
+  display: flex;
+  gap: 1rem;
 `
 
 export const ColumnActionsContainer = styled.div`
