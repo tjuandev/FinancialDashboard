@@ -1,3 +1,4 @@
+import { Button } from 'components/atoms'
 import styled from 'styled-components'
 import theme from 'theme'
 
@@ -5,25 +6,35 @@ export const Container = styled.div`
   padding: 0 ${theme.spacing[20]};
 `
 
-export const Header = styled.header`
+export const ToolbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  padding-top: ${theme.spacing[6]};
+  margin-top: 64px;
+  margin-bottom: 24px;
 
-  margin-bottom: ${theme.spacing[16]};
+  width: 1143px;
 `
 
-export const LeftSide = styled.div`
+export const ColumnActionsContainer = styled.div`
   display: flex;
-  align-items: center;
-  gap: ${theme.spacing[8]};
+  justify-content: end;
+  gap: 0.25rem;
+
+  margin: 0.25rem 0;
 `
 
-export const RightSide = styled.div`
+export const NewEntryButton = styled(Button)`
+  width: fit-content;
   display: flex;
   align-items: center;
-  gap: ${theme.spacing[8]};
+  gap: 10px;
+
+  padding: 12px 16px;
+
+  :hover {
+    filter: brightness(0.9);
+  }
 `
 
 export const Main = styled.main``
