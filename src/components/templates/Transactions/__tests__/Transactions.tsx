@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react'
 import Transactions from '..'
 
+jest.mock('uuid')
+
 describe('<Transactions />', () => {
   it('Should match snapshot', () => {
     const { container } = render(

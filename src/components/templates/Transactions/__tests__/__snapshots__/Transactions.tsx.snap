@@ -5,43 +5,6 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   padding: 0 5rem;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding-top: 1.5rem;
-  margin-bottom: 4rem;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 2rem;
-}
-
 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -118,6 +81,184 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   outline: 1px solid #14404D;
 }
 
+.c20 {
+  height: 44px;
+  width: 44px;
+  background-color: #14404D;
+  color: #CDDBC2;
+  padding: 0.5rem;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.c20:focus {
+  outline: 1px solid #14404D;
+}
+
+.c20:hover {
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+
+.c26 {
+  height: 44px;
+  width: 44px;
+  background-color: #CDDBC2;
+  color: #14404D;
+  padding: 0.25rem;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.625rem;
+}
+
+.c26:focus {
+  outline: 1px solid #14404D;
+}
+
+.c26:hover {
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+
+.c11 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3,290px);
+  width: 100%;
+  height: 100%;
+}
+
+.c12 {
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background: #CDDBC2;
+  color: #14404D;
+}
+
+.c12 > h2 {
+  font-size: 1.875rem;
+  margin-bottom: 4px;
+}
+
+.c12 > p {
+  font-size: 1rem;
+}
+
+.c13 {
+  margin-bottom: 1.5rem;
+}
+
+.c15 > div {
+  border: none;
+  background: #CDDBC2;
+  border-radius: 0.625rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.c15 > div > div {
+  padding: 0;
+}
+
+.c16 {
+  grid-area: 1/1/2/3;
+}
+
+.c16 > div {
+  padding: 0;
+  margin: 0;
+}
+
+.c17 {
+  height: 44px;
+  width: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  background: #CDDBC2;
+  border-radius: 0.625rem;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.c17.open {
+  width: 300px;
+}
+
+.c17:not(.open):hover {
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
+}
+
+.c17:focus-within {
+  outline: 0.5px solid #14404D;
+}
+
+.c19 {
+  position: relative;
+  margin: 0 16px 0 40px;
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  opacity: 0;
+  width: 0;
+}
+
+.c19:focus {
+  outline: 0;
+}
+
+.c19.open {
+  opacity: 1;
+  width: 100%;
+}
+
+.c18 > button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -137,6 +278,134 @@ exports[`<Transactions /> Should match snapshot 1`] = `
 .c4 {
   width: 24px;
   height: 24px;
+}
+
+.c21 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.c21 thead {
+  background: #14404D;
+  border-radius: 1rem;
+}
+
+.c21 tbody {
+  background: #CDDBC2;
+}
+
+.c21 th,
+.c21 td {
+  font-size: 14px;
+}
+
+.c21 td {
+  padding: 0 16px;
+}
+
+.c21 tr:last-child td:first-child {
+  border-radius: 0 0 0 16px;
+}
+
+.c21 tr:last-child td:last-child {
+  border-radius: 0 0 16px 0;
+}
+
+.c22 {
+  color: #DCE5D5;
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.c22:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.c22:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.c23 {
+  color: #DCE5D5;
+  padding: 10px 16px;
+  text-align: left;
+  text-align: end;
+}
+
+.c23:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.c23:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.c24 {
+  text-align: end;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  gap: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 64px;
+  margin-bottom: 24px;
+  width: 1143px;
 }
 
 <div>
@@ -209,7 +478,540 @@ exports[`<Transactions /> Should match snapshot 1`] = `
     </header>
     <main
       class=""
-    />
+    >
+      <div
+        class="c11"
+      >
+        <div
+          class="c12"
+        >
+          <header
+            class="c13"
+          >
+            <svg
+              aria-label="Wallet"
+              fill="none"
+              height="38"
+              role="img"
+              viewBox="0 0 38 34"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32.884 9.714H8c-.592 0-1.714-.428-1.714-2.143 0-1.714 1.55-1.714 2.143-1.714h24.455c.592 0 1.259-.694 1.259-1.286 0-1.775-1.44-2.571-3.214-2.571H6.286A4.285 4.285 0 002 6.286v21.428A4.285 4.285 0 006.286 32h26.598c1.876 0 3.402-1.442 3.402-3.214V11.643c0-1.773-1.526-1.929-3.402-1.929zm-3.027 12.643a2.143 2.143 0 110-4.286 2.143 2.143 0 010 4.286z"
+                stroke="currentColor"
+                stroke-width="3"
+              />
+            </svg>
+          </header>
+          <h2>
+            R$ 1290,20
+          </h2>
+          <p>
+            Seu saldo atual
+          </p>
+        </div>
+        <div
+          class="c12"
+        >
+          <header
+            class="c13"
+          >
+            <svg
+              aria-label="Stock Up"
+              fill="none"
+              height="29"
+              role="img"
+              viewBox="0 0 35 29"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                clip-path="url(#clip0_6_486)"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              >
+                <path
+                  d="M33.542 7.25L19.687 18.73l-7.291-6.043L1.458 21.75"
+                />
+                <path
+                  d="M24.792 7.25h8.75v7.25"
+                />
+              </g>
+              <defs>
+                <clippath
+                  id="clip0_6_486"
+                >
+                  <path
+                    d="M0 0H35V29H0z"
+                    fill="#fff"
+                  />
+                </clippath>
+              </defs>
+            </svg>
+          </header>
+          <h2>
+            R$ 2080,63
+          </h2>
+          <p>
+            Seu ganhos
+          </p>
+        </div>
+        <div
+          class="c12"
+        >
+          <header
+            class="c13"
+          >
+            <svg
+              fill="none"
+              height="29"
+              viewBox="0 0 36 29"
+              width="35"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M34.5 21.75L20.25 10.27l-7.5 6.043L1.5 7.25"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              />
+              <path
+                d="M25.5 21.75h9V14.5"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              />
+            </svg>
+          </header>
+          <h2>
+            R$ 790,43
+          </h2>
+          <p>
+            Suas despesas
+          </p>
+        </div>
+      </div>
+      <header
+        class="c14"
+      >
+        <div
+          style="width: 148px;"
+        >
+          <div
+            class=" css-b62m3t-container"
+          >
+            <span
+              class="css-1f43avz-a11yText-A11yText"
+              id="react-select-2-live-region"
+            />
+            <span
+              aria-atomic="false"
+              aria-live="polite"
+              aria-relevant="additions text"
+              class="css-1f43avz-a11yText-A11yText"
+            />
+            <div
+              class="c15"
+              data-testid="Control"
+            >
+              <div
+                class=" css-1s2u09g-control"
+              >
+                <div
+                  class=" css-319lph-ValueContainer"
+                >
+                  <div
+                    class=" css-qnpei2-placeholder"
+                    id="react-select-2-placeholder"
+                  >
+                    Select...
+                  </div>
+                  <div
+                    class="c16"
+                    data-testid="Input"
+                  >
+                    <div
+                      class=" css-1feah6e-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-describedby="react-select-2-placeholder"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-2-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class=" css-1hb7zxy-IndicatorsContainer"
+                >
+                  <span
+                    class=" css-1okebmr-indicatorSeparator"
+                  />
+                  <svg
+                    aria-label="ChevronDown"
+                    fill="none"
+                    height="9"
+                    role="img"
+                    viewBox="0 0 15 9"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 2.244l5.5 4.512L13 2.244"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="display: flex; gap: 1rem;"
+        >
+          <div
+            aria-expanded="false"
+            class="c17"
+            data-testid="container-element"
+          >
+            <div
+              class="c18"
+            >
+              <button
+                class="c6"
+              >
+                <svg
+                  fill="none"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  width="23"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.444 18.889a8.444 8.444 0 100-16.889 8.444 8.444 0 000 16.889zM21 21l-4.592-4.592"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                  />
+                </svg>
+              </button>
+            </div>
+            <input
+              class="c19"
+              placeholder="Type something..."
+              type="text"
+            />
+          </div>
+          <button
+            class="c20"
+          >
+            Nova Entrada 
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 17"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 3.833v9.334M3.333 8.5h9.334"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <div
+        style="width: 1143px;"
+      >
+        <table
+          class="c21"
+        >
+          <thead>
+            <tr>
+              <th
+                class="c22"
+              >
+                Type
+              </th>
+              <th
+                class="c22"
+              >
+                Date
+              </th>
+              <th
+                class="c22"
+              >
+                Description
+              </th>
+              <th
+                class="c22"
+              >
+                Value
+              </th>
+              <th
+                class="c23"
+                id="actions"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                class=""
+              >
+                Despesa
+              </td>
+              <td
+                class=""
+              >
+                2022-02-2004
+              </td>
+              <td
+                class=""
+              >
+                Compras no submundo pós apocalíptico de Gânador
+              </td>
+              <td
+                class=""
+              >
+                2000
+              </td>
+              <td
+                class="c24"
+              >
+                <div
+                  class="c25"
+                >
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class=""
+              >
+                Despesa
+              </td>
+              <td
+                class=""
+              >
+                2022-02-2004
+              </td>
+              <td
+                class=""
+              >
+                Compras no submundo pós apocalíptico de Gânador
+              </td>
+              <td
+                class=""
+              >
+                2000
+              </td>
+              <td
+                class="c24"
+              >
+                <div
+                  class="c25"
+                >
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                class=""
+              >
+                Despesa
+              </td>
+              <td
+                class=""
+              >
+                2022-02-2004
+              </td>
+              <td
+                class=""
+              >
+                Compras no submundo pós apocalíptico de Gânador
+              </td>
+              <td
+                class=""
+              >
+                2000
+              </td>
+              <td
+                class="c24"
+              >
+                <div
+                  class="c25"
+                >
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="c26"
+                  >
+                    <svg
+                      fill="none"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
   </div>
 </div>
 `
