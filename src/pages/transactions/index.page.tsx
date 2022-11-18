@@ -1,10 +1,10 @@
 import { Icon } from 'components/atoms'
 import { Transactions } from 'components/templates'
-import { columns, rows } from './tableMock'
+import { columns, rows, TransactionsTable } from './tableMock'
 
 export default function Home() {
   return (
-    <Transactions
+    <Transactions<TransactionsTable>
       headerProps={{
         breadcrumbProps: {
           name: 'Transactions',

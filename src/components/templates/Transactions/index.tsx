@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { Grid, Icon } from 'components/atoms'
-import { ExpandableInput, Kpi, Select } from 'components/molecules'
+import { ExpandableInput, Kpi, Select, Table } from 'components/molecules'
 import { Header } from 'components/organisms'
 
 import { Props } from './types'
@@ -9,7 +9,6 @@ import { Props } from './types'
 import { IconLiterals } from 'types/icons'
 
 import { v4 as uuid } from 'uuid'
-import TransactionsTable from './TransactionsTable'
 
 const kpisMock = [
   {
@@ -66,13 +65,16 @@ const Toolbar = () => (
   </S.ToolbarContainer>
 )
 
-const Transactions = ({ headerProps }: Props) => (
+const Transactions = <TableType,>({
+  headerProps,
+  tableProps
+}: Props<TableType>) => (
   <S.Container>
     <Header {...headerProps} />
     <S.Main>
       <KPIs />
       <Toolbar />
-      <TransactionsTable />
+      <Table {...tableProps} />
     </S.Main>
   </S.Container>
 )

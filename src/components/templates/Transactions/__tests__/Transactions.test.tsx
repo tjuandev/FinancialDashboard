@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { render } from '@testing-library/react'
 import Transactions from '..'
 
 jest.mock('uuid')
 
+// NOTE Improve test
+
 describe('<Transactions />', () => {
   it('Should match snapshot', () => {
     const { container } = render(
-      <Transactions
+      <Transactions<any>
         headerProps={{
           avatarProps: {
             name: 'User Test'
@@ -14,6 +17,10 @@ describe('<Transactions />', () => {
           breadcrumbProps: {
             name: 'Test'
           }
+        }}
+        tableProps={{
+          columns: [],
+          rows: []
         }}
       />
     )
