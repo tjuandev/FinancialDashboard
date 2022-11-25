@@ -1,7 +1,10 @@
+/* eslint-disable react/display-name */
+
 import { render, screen } from '@testing-library/react'
 import { generateTableColumns } from 'helpers/table'
 
 import Table from '..'
+import { Columns } from '../types'
 
 type TestTableColumns = {
   column: string
@@ -13,13 +16,15 @@ const columns = [
   accessor('column', {
     cell: (info) => info.getValue()
   })
-]
+] as Columns<TestTableColumns>
 
 const rows: TestTableColumns[] = [
   {
     column: 'rowContent'
   }
 ]
+
+jest.mock('components/atoms/Spinner', () => () => <small>spinner</small>)
 
 describe('<Table />a', () => {
   it('Should render column and row', () => {
@@ -31,6 +36,17 @@ describe('<Table />a', () => {
 
     expect(columnElement).toHaveTextContent('column')
     expect(rowDataElement).toHaveTextContent('rowContent')
+  })
+
+  it('Should not show column and rows by default', () => {
+    render(<Table<TestTableColumns> />)
+
+    const columnElement = screen.queryByRole('columnheader')
+
+    const rowDataElement = screen.queryByRole('cell')
+
+    expect(columnElement).not.toBeInTheDocument()
+    expect(rowDataElement).not.toBeInTheDocument()
   })
 
   it('Should apply width and textAlign to column based on columnExtension', () => {
@@ -75,5 +91,13 @@ describe('<Table />a', () => {
     expect(rowElement).toHaveStyle({
       textAlign: 'center'
     })
+  })
+
+  it('Should render a spinner if loading prop is true', () => {
+    render(<Table<TestTableColumns> loading={true} />)
+
+    const rowElement = screen.getByText('spinner')
+
+    expect(rowElement).toBeInTheDocument()
   })
 })
