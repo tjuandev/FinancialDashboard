@@ -4,7 +4,7 @@ import {
   useReactTable
 } from '@tanstack/react-table'
 
-import { Column, Row, Table } from './styles'
+import * as S from './styles'
 import { useState } from 'react'
 import {
   ColumnExtension,
@@ -13,6 +13,7 @@ import {
   TBodyProps,
   THeadProps
 } from './types'
+import { Spinner } from 'components/atoms'
 
 const getColumnExtensionsProps = (
   columnsExtensions?: ColumnExtensions,
@@ -38,9 +39,9 @@ const THead = <ColumnType,>({
             )
 
             return (
-              <Column key={id} {...columnExtensions}>
+              <S.Column key={id} {...columnExtensions}>
                 {flexRender(column.columnDef.header, getContext())}
-              </Column>
+              </S.Column>
             )
           })}
         </tr>
@@ -69,12 +70,12 @@ const TBody = <ColumnType,>({
               )
 
               return (
-                <Row
+                <S.Row
                   key={cell.id}
                   horizontalAlign={columnExtensions?.horizontalAlign}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </Row>
+                </S.Row>
               )
             })}
           </tr>
@@ -84,10 +85,10 @@ const TBody = <ColumnType,>({
   )
 }
 
-const View = <ColumnType,>(props: TableProps<ColumnType>) => {
-  const { columns, rows, columnsExtensions } = props
+const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
+  const { columns = [], rows = [], columnsExtensions } = props
 
-  const [data] = useState([...rows])
+  const [data] = useState(rows)
 
   const table = useReactTable<ColumnType>({
     data,
@@ -95,12 +96,27 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
     getCoreRowModel: getCoreRowModel()
   })
 
+  const commonProps = {
+    table,
+    columnsExtensions
+  }
+
   return (
-    <Table>
-      <THead table={table} columnsExtensions={columnsExtensions} />
-      <TBody table={table} columnsExtensions={columnsExtensions} />
-    </Table>
+    <S.Table>
+      <THead {...commonProps} />
+      <TBody {...commonProps} />
+    </S.Table>
   )
+}
+
+const View = <ColumnType,>(props: TableProps<ColumnType>) => {
+  const { loading } = props
+
+  if (loading) {
+    return <Spinner />
+  }
+
+  return <Table<ColumnType> {...props} />
 }
 
 export default View

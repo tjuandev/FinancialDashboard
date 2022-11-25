@@ -8,10 +8,13 @@ export type ColumnExtension = {
 
 export type ColumnExtensions = ColumnExtension[]
 
+export type Columns<ColumnType> = ColumnDef<ColumnType, unknown>[]
+
 export type TableProps<ColumnType> = {
   rows?: ColumnType[]
-  columns?: ColumnDef<ColumnType, unknown>[]
+  columns?: Columns<ColumnType>
   columnsExtensions?: ColumnExtensions
+  loading?: boolean
 }
 
 export type THeadProps<ColumnType> = {
