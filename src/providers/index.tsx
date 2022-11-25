@@ -6,7 +6,8 @@ const client = new QueryClient()
 
 const Providers = ({ children }: { children: ReactNode }) => (
   <QueryClientProvider client={client}>
-    <ReactQueryDevtools initialIsOpen={false} />I{children}
+    <ReactQueryDevtools initialIsOpen={false} />
+    {children}
   </QueryClientProvider>
 )
 
