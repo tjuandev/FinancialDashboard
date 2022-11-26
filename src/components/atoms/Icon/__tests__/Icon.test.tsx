@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { runTestSilently } from 'helpers/tests'
+import { runTestSilently } from 'tests/mocks'
 
 import Icon from '..'
 import { IconsLiteralsOptions } from '../types'
