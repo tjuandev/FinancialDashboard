@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import axios from 'axios'
 
 import { createColumnHelper } from '@tanstack/react-table'
@@ -15,11 +14,9 @@ import {
 
 const columnHelper = createColumnHelper<TransactionsTable>()
 
-const useFetchTable = (): UseFetchTable => {
-  useEffect(() => {
-    makeServer()
-  }, [])
+makeServer()
 
+const useFetchTable = (): UseFetchTable => {
   const { data, isLoading } = useQuery<TableRequest>({
     queryKey: ['transactions-table'],
     queryFn: () =>
