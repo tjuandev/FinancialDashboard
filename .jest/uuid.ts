@@ -11,5 +11,3 @@ jest.mock('uuid', () => {
     }
   }
 })
-
-export {}

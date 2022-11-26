@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import 'tests/mocks/uuid'
-
 import { render } from '@testing-library/react'
 import Transactions from '..'
 
