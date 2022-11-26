@@ -25,6 +25,7 @@ module.exports = {
     'src/pages/index.page.tsx',
     'src/pages/_document.page.tsx',
     'src/hooks/index.ts',
+    'src/providers/',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
