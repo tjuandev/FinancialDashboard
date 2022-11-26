@@ -5,25 +5,21 @@ import { TransactionsTable } from './types'
 import useFetchTable from './useFetchTable'
 
 export default function Home() {
-  const { columns, rows } = useFetchTable()
-
-  const showTable = columns && rows
+  const { columns, rows, isLoading } = useFetchTable()
 
   return (
-    showTable && (
-      <Transactions<TransactionsTable>
-        headerProps={{
-          breadcrumbProps: {
-            name: 'Transactions',
-            icon: <Icon name="transactions" />
-          },
-          avatarProps: {
-            name: 'Miguel Rodrigo',
-            description: 'Product Design UX/UI'
-          }
-        }}
-        tableProps={{ columns, rows }}
-      />
-    )
+    <Transactions<TransactionsTable>
+      headerProps={{
+        breadcrumbProps: {
+          name: 'Transactions',
+          icon: <Icon name="transactions" />
+        },
+        avatarProps: {
+          name: 'Miguel Rodrigo',
+          description: 'Product Design UX/UI'
+        }
+      }}
+      tableProps={{ columns, rows, loading: isLoading }}
+    />
   )
 }

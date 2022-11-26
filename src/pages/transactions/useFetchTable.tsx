@@ -42,7 +42,7 @@ const useFetchTable = (): UseFetchTable => {
     makeServer()
   }, [])
 
-  const { data } = useQuery<TableRequest>({
+  const { data, isLoading } = useQuery<TableRequest>({
     queryKey: ['transactions-table'],
     queryFn: () =>
       axios.get('http://localhost:3000/mock-api/table').then((res) => res.data)
@@ -59,7 +59,8 @@ const useFetchTable = (): UseFetchTable => {
 
   return {
     columns: columnsAdapted as Columns,
-    rows
+    rows,
+    isLoading
   }
 }
 
