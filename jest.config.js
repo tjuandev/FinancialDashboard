@@ -16,6 +16,7 @@ module.exports = {
     'src/styles/',
     'src/helpers/',
     'src/assets/',
+    'src/tests/',
     'src/components/atoms/index.ts',
     'src/components/atoms/Icon/icons/',
     'src/components/molecules/index.ts',
