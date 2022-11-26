@@ -53,3 +53,11 @@ export const Column = styled.th<ColumnProps>`
 export const Row = styled.td<RowProps>`
   text-align: ${({ horizontalAlign }) => horizontalAlign};
 `
+
+export const SpinnerWrapper = styled.div`
+  width: 100%;
+
+  > div {
+    margin: ${theme.spacing[16]} auto;
+  }
+`

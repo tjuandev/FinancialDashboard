@@ -113,7 +113,11 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
   const { loading } = props
 
   if (loading) {
-    return <Spinner />
+    return (
+      <S.SpinnerWrapper>
+        <Spinner />
+      </S.SpinnerWrapper>
+    )
   }
 
   return <Table<ColumnType> {...props} />
