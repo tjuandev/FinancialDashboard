@@ -7,6 +7,7 @@ import ChevronDown from './icons/ChevronDown'
 import Search from './icons/Search'
 import OutlinedEdit from './icons/OutlinedEdit'
 import OutlinedTrash from './icons/OutlinedTrash'
+import Plus from './icons/Plus'
 
 export const iconsLiterals = {
   transactions: <Transactions />,
@@ -17,5 +18,6 @@ export const iconsLiterals = {
   'chevron-down': <ChevronDown />,
   search: <Search />,
   'outlined-edit': <OutlinedEdit />,
-  'outlined-trash': <OutlinedTrash />
+  'outlined-trash': <OutlinedTrash />,
+  plus: <Plus />
 }

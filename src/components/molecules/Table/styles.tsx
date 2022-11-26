@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from 'theme'
-import { ColumnProps } from './types'
+import { ColumnProps, RowProps } from './types'
 
 export const Table = styled.table`
   width: 100%;
@@ -25,11 +25,11 @@ export const Table = styled.table`
     padding: 0 16px;
   }
 
-  td:first-child {
+  tr:last-child td:first-child {
     border-radius: 0 0 0 16px;
   }
 
-  td:last-child {
+  tr:last-child td:last-child {
     border-radius: 0 0 16px 0;
   }
 `
@@ -45,5 +45,19 @@ export const Column = styled.th<ColumnProps>`
   }
   :last-child {
     border-radius: 0 16px 0 0;
+  }
+
+  text-align: ${({ horizontalAlign }) => horizontalAlign};
+`
+
+export const Row = styled.td<RowProps>`
+  text-align: ${({ horizontalAlign }) => horizontalAlign};
+`
+
+export const SpinnerWrapper = styled.div`
+  width: 100%;
+
+  > div {
+    margin: ${theme.spacing[16]} auto;
   }
 `

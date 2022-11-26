@@ -21,6 +21,9 @@ module.exports = {
     'src/components/molecules/index.ts',
     'src/components/organisms/index.ts',
     'src/components/templates/index.ts',
+    'src/pages/_app.page.tsx',
+    'src/pages/index.page.tsx',
+    'src/pages/_document.page.tsx',
     'src/hooks/index.ts',
     'types.ts'
   ],

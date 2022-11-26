@@ -4,9 +4,23 @@ import {
   useReactTable
 } from '@tanstack/react-table'
 
-import { Column, Table } from './styles'
+import * as S from './styles'
 import { useState } from 'react'
-import { TableProps, THeadProps } from './types'
+import {
+  ColumnExtension,
+  ColumnExtensions,
+  TableProps,
+  TBodyProps,
+  THeadProps
+} from './types'
+import { Spinner } from 'components/atoms'
+
+const getColumnExtensionsProps = (
+  columnsExtensions?: ColumnExtensions,
+  currentCellId?: string
+): ColumnExtension | undefined => {
+  return columnsExtensions?.find(({ id }) => id === currentCellId)
+}
 
 const THead = <ColumnType,>({
   table,
@@ -17,19 +31,17 @@ const THead = <ColumnType,>({
       {table.getHeaderGroups().map((headerGroup) => (
         <tr key={headerGroup.id}>
           {headerGroup.headers.map((header) => {
-            let columnProps
+            const { id, column, getContext } = header
 
-            if (columnsExtensions) {
-              columnProps = columnsExtensions.find(({ id }) => id === header.id)
-            }
+            const columnExtensions = getColumnExtensionsProps(
+              columnsExtensions,
+              id
+            )
 
             return (
-              <Column key={header.id} {...columnProps}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
-              </Column>
+              <S.Column key={id} {...columnExtensions}>
+                {flexRender(column.columnDef.header, getContext())}
+              </S.Column>
             )
           })}
         </tr>
@@ -38,10 +50,45 @@ const THead = <ColumnType,>({
   )
 }
 
-const View = <ColumnType,>(props: TableProps<ColumnType>) => {
-  const { columns, rows, columnsExtensions } = props
+const TBody = <ColumnType,>({
+  table,
+  columnsExtensions
+}: TBodyProps<ColumnType>) => {
+  return (
+    <tbody>
+      {table.getRowModel().rows.map((row) => {
+        return (
+          <tr key={row.id}>
+            {row.getVisibleCells().map((cell) => {
+              const {
+                column: { id }
+              } = cell
 
-  const [data] = useState([...rows])
+              const columnExtensions = getColumnExtensionsProps(
+                columnsExtensions,
+                id
+              )
+
+              return (
+                <S.Row
+                  key={cell.id}
+                  horizontalAlign={columnExtensions?.horizontalAlign}
+                >
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </S.Row>
+              )
+            })}
+          </tr>
+        )
+      })}
+    </tbody>
+  )
+}
+
+const Table = <ColumnType,>(props: TableProps<ColumnType>) => {
+  const { columns = [], rows = [], columnsExtensions } = props
+
+  const [data] = useState(rows)
 
   const table = useReactTable<ColumnType>({
     data,
@@ -49,22 +96,31 @@ const View = <ColumnType,>(props: TableProps<ColumnType>) => {
     getCoreRowModel: getCoreRowModel()
   })
 
+  const commonProps = {
+    table,
+    columnsExtensions
+  }
+
   return (
-    <Table>
-      <THead table={table} columnsExtensions={columnsExtensions} />
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+    <S.Table>
+      <THead {...commonProps} />
+      <TBody {...commonProps} />
+    </S.Table>
   )
+}
+
+const View = <ColumnType,>(props: TableProps<ColumnType>) => {
+  const { loading } = props
+
+  if (loading) {
+    return (
+      <S.SpinnerWrapper>
+        <Spinner />
+      </S.SpinnerWrapper>
+    )
+  }
+
+  return <Table<ColumnType> {...props} />
 }
 
 export default View

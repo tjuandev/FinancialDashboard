@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/react'
+import { css } from 'styled-components'
 
 import Button from '.'
 import { ButtonProps } from './types'
@@ -13,6 +14,8 @@ export const Primary: Story<ButtonProps> = (args) => (
 )
 
 Primary.args = {
-  width: 'fit-content',
-  height: 'fit-content'
+  extraStyles: css`
+    width: fit-content;
+    height: fit-content;
+  `
 }
