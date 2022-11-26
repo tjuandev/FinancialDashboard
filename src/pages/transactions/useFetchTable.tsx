@@ -13,28 +13,6 @@ import {
   UseFetchTable
 } from './types'
 
-/* const actionButtonExtraStyles = css`
-width: 40px;
-height: 40px;
-
-border-radius: ${theme.borderRadius.base};
-
-:hover {
-  filter: brightness(0.9);
-}
-`
-
-const ActionButtons = () => (
-  <ColumnActionsContainer>
-  <Button padding="0.25rem" extraStyles={actionButtonExtraStyles}>
-  <Icon name="outlined-trash" />
-  </Button>
-  <Button padding="0.25rem" extraStyles={actionButtonExtraStyles}>
-  <Icon name="outlined-edit" />
-  </Button>
-  </ColumnActionsContainer>
-  ) */
-
 const columnHelper = createColumnHelper<TransactionsTable>()
 
 const useFetchTable = (): UseFetchTable => {
