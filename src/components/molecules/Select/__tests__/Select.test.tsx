@@ -6,6 +6,14 @@ import Select from '..'
 describe('<Select />', () => {
   const user = userEvent.setup()
 
+  /* it('Should render Placeholder custom component by default', () => {
+    render(<Select />)
+
+    const placeholderElement = screen.getByTestId(/Placeholder/i)
+
+    expect(placeholderElement).toBeInTheDocument()
+  }) */
+
   it('Should render chevron down icon as Dropdown Indicator', () => {
     render(<Select />)
 

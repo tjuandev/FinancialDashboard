@@ -1,3 +1,4 @@
+import { components } from 'react-select'
 import styled from 'styled-components'
 import theme from 'theme'
 
@@ -21,6 +22,8 @@ export const SelectControlWrapper = styled.div`
 
 export const SingleValueWrapper = styled.div`
   grid-area: 1/1/2/3;
+
+  padding-right: 0.5rem;
 
   > div {
     font-weight: ${theme.typography.fontWeights.semibold} !important;
@@ -57,4 +60,7 @@ export const MenuListWrapper = styled.div`
   > div > div {
     padding: ${theme.spacing['2']} ${theme.spacing[4]};
   }
+`
+export const Placeholder = styled(components.Placeholder)`
+  padding-right: 0.5rem;
 `
