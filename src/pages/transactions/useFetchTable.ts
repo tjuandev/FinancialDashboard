@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-import { createColumnHelper } from '@tanstack/react-table'
-
 import makeServer from './server'
 import { useQuery } from '@tanstack/react-query'
 
@@ -11,8 +9,9 @@ import {
   TransactionsTable,
   UseFetchTable
 } from './types'
+import { generateTableColumns } from 'helpers/table'
 
-const columnHelper = createColumnHelper<TransactionsTable>()
+const columnHelper = generateTableColumns<TransactionsTable>()
 
 makeServer()
 
