@@ -31,7 +31,7 @@ describe('useFetchTable', () => {
     })
   })
 
-  it('Should return columns adapted to work in a table and rows should not be undefined', async () => {
+  it('Should return columns and rows adapted to work in a table', async () => {
     const {
       result: { current }
     } = renderHook(useFetchTable, {
