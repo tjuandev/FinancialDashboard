@@ -10,6 +10,7 @@ import {
   UseFetchTable
 } from './types'
 import { generateTableColumns } from 'helpers/table'
+import { capitalize } from 'helpers/string'
 
 const columnHelper = generateTableColumns<TransactionsTable>()
 
@@ -26,8 +27,7 @@ const useFetchTable = (): UseFetchTable => {
 
   const columnsAdapted = columns?.map((column) =>
     columnHelper.accessor(column, {
-      header: 'Type',
-      cell: (info) => info.getValue()
+      header: capitalize(column)
     })
   )
 
