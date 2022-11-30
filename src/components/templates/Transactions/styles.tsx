@@ -6,7 +6,9 @@ export const Container = styled.div`
   padding: 0 ${theme.spacing[20]};
 `
 
-export const TransactionsSelectorWrapper = styled.div``
+export const TransactionsSelectorWrapper = styled.div`
+  width: 148px;
+`
 
 export const ToolbarContainer = styled.div`
   display: flex;
