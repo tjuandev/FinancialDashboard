@@ -43,7 +43,7 @@ const KPIs = () => (
 const TransactionsSelector = () => (
   <S.TransactionsSelectorWrapper>
     <Select
-      defaultValue="all"
+      defaultValue={{ value: 'all', label: 'Todas' }}
       options={[
         { value: 'all', label: 'Todas' },
         { value: 'incomes', label: 'Ganhos' },
