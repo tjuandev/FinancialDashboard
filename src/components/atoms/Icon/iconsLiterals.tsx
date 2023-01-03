@@ -8,6 +8,7 @@ import Search from './icons/Search'
 import OutlinedEdit from './icons/OutlinedEdit'
 import OutlinedTrash from './icons/OutlinedTrash'
 import Plus from './icons/Plus'
+import Close from './icons/Close'
 
 export const iconsLiterals = {
   transactions: <Transactions />,
@@ -19,5 +20,6 @@ export const iconsLiterals = {
   search: <Search />,
   'outlined-edit': <OutlinedEdit />,
   'outlined-trash': <OutlinedTrash />,
-  plus: <Plus />
+  plus: <Plus />,
+  close: <Close />
 }

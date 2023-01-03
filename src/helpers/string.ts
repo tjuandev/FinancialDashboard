@@ -13,3 +13,9 @@ export const getFirstAndLastInitialsUpperCase = (str: string) => {
     ?.join('')
     ?.toUpperCase()
 }
+
+export const capitalize = (str: string) => {
+  const firstCapitalizedLetter = str[0].toUpperCase()
+
+  return firstCapitalizedLetter + str.slice(1)
+}

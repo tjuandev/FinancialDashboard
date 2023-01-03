@@ -8,7 +8,8 @@ import {
   Input,
   SingleValue,
   Menu,
-  MenuList
+  MenuList,
+  Placeholder
 } from './CustomComponents'
 
 const Select = dynamic(() => import('react-select'), {
@@ -36,6 +37,7 @@ const BaseSelect = ({ components, ...props }: Props) => (
       SingleValue,
       Menu,
       MenuList,
+      Placeholder,
       ...components
     }}
     theme={newSelectorTheme}

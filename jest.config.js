@@ -16,6 +16,7 @@ module.exports = {
     'src/styles/',
     'src/helpers/',
     'src/assets/',
+    'src/tests/',
     'src/components/atoms/index.ts',
     'src/components/atoms/Icon/icons/',
     'src/components/molecules/index.ts',
@@ -25,6 +26,7 @@ module.exports = {
     'src/pages/index.page.tsx',
     'src/pages/_document.page.tsx',
     'src/hooks/index.ts',
+    'src/providers/',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],

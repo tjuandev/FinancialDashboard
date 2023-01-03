@@ -77,7 +77,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   outline: 1px solid #14404D;
 }
 
-.c21 {
+.c23 {
   height: 44px;
   width: 44px;
   background-color: #14404D;
@@ -91,7 +91,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c21:focus {
+.c23:focus {
   outline: 1px solid #14404D;
 }
 
@@ -105,6 +105,10 @@ exports[`<Transactions /> Should match snapshot 1`] = `
 
 .c0 {
   padding: 0 5rem;
+}
+
+.c15 {
+  width: 148px;
 }
 
 .c14 {
@@ -121,7 +125,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   width: 1143px;
 }
 
-.c17 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,7 +133,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   gap: 1rem;
 }
 
-.c22 {
+.c24 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -145,7 +149,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   padding: 12px 16px;
 }
 
-.c22:hover {
+.c24:hover {
   -webkit-filter: brightness(0.9);
   filter: brightness(0.9);
 }
@@ -172,7 +176,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   margin-bottom: 1.5rem;
 }
 
-.c15 > div {
+.c16 > div {
   border: none;
   background: #CDDBC2;
   border-radius: 0.625rem;
@@ -184,20 +188,30 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c15 > div > div {
+.c16 > div > div {
   padding: 0;
 }
 
-.c16 {
+.c17 {
   grid-area: 1/1/2/3;
+  padding-right: 0.5rem;
 }
 
-.c16 > div {
-  padding: 0;
+.c17 > div {
+  font-weight: 600 !important;
   margin: 0;
 }
 
 .c18 {
+  grid-area: 1/1/2/3;
+}
+
+.c18 > div {
+  padding: 0;
+  margin: 0;
+}
+
+.c20 {
   height: 44px;
   width: 44px;
   display: -webkit-box;
@@ -217,20 +231,20 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c18.open {
+.c20.open {
   width: 300px;
 }
 
-.c18:not(.open):hover {
+.c20:not(.open):hover {
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
 }
 
-.c18:focus-within {
+.c20:focus-within {
   outline: 0.5px solid #14404D;
 }
 
-.c20 {
+.c22 {
   position: relative;
   margin: 0 16px 0 40px;
   background: transparent;
@@ -242,16 +256,16 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   width: 0;
 }
 
-.c20:focus {
+.c22:focus {
   outline: 0;
 }
 
-.c20.open {
+.c22.open {
   opacity: 1;
   width: 100%;
 }
 
-.c19 > button {
+.c21 > button {
   position: absolute;
   top: 0;
   left: 0;
@@ -279,34 +293,34 @@ exports[`<Transactions /> Should match snapshot 1`] = `
   height: 24px;
 }
 
-.c23 {
+.c25 {
   width: 100%;
   border-collapse: collapse;
 }
 
-.c23 thead {
+.c25 thead {
   background: #14404D;
   border-radius: 1rem;
 }
 
-.c23 tbody {
+.c25 tbody {
   background: #CDDBC2;
 }
 
-.c23 th,
-.c23 td {
+.c25 th,
+.c25 td {
   font-size: 14px;
 }
 
-.c23 td {
+.c25 td {
   padding: 0 16px;
 }
 
-.c23 tr:last-child td:first-child {
+.c25 tr:last-child td:first-child {
   border-radius: 0 0 0 16px;
 }
 
-.c23 tr:last-child td:last-child {
+.c25 tr:last-child td:last-child {
   border-radius: 0 0 16px 0;
 }
 
@@ -539,7 +553,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
         class="c14"
       >
         <div
-          class=""
+          class="c15"
         >
           <div
             class=" css-b62m3t-container"
@@ -555,7 +569,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               class="css-1f43avz-a11yText-A11yText"
             />
             <div
-              class="c15"
+              class="c16"
               data-testid="Control"
             >
               <div
@@ -565,13 +579,17 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                   class=" css-319lph-ValueContainer"
                 >
                   <div
-                    class=" css-qnpei2-placeholder"
-                    id="react-select-2-placeholder"
+                    class="c17"
+                    data-testid="SingleValue"
                   >
-                    Select...
+                    <div
+                      class=" css-1afp7u0-singleValue"
+                    >
+                      Todas
+                    </div>
                   </div>
                   <div
-                    class="c16"
+                    class="c18"
                     data-testid="Input"
                   >
                     <div
@@ -580,7 +598,6 @@ exports[`<Transactions /> Should match snapshot 1`] = `
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-describedby="react-select-2-placeholder"
                         aria-expanded="false"
                         aria-haspopup="true"
                         autocapitalize="none"
@@ -627,15 +644,15 @@ exports[`<Transactions /> Should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="c17"
+          class="c19"
         >
           <div
             aria-expanded="false"
-            class="c18"
+            class="c20"
             data-testid="container-element"
           >
             <div
-              class="c19"
+              class="c21"
             >
               <button
                 class="c6"
@@ -658,13 +675,13 @@ exports[`<Transactions /> Should match snapshot 1`] = `
               </button>
             </div>
             <input
-              class="c20"
+              class="c22"
               placeholder="Type something..."
               type="text"
             />
           </div>
           <button
-            class="c21 c22"
+            class="c23 c24"
           >
             Nova Entrada 
             <svg
@@ -686,7 +703,7 @@ exports[`<Transactions /> Should match snapshot 1`] = `
         </div>
       </div>
       <table
-        class="c23"
+        class="c25"
       >
         <thead>
           <tr />
@@ -696,4 +713,4 @@ exports[`<Transactions /> Should match snapshot 1`] = `
     </main>
   </div>
 </div>
-`;
+`

@@ -7,7 +7,8 @@ import {
   SingleValueProps,
   DropdownIndicatorProps,
   MenuProps,
-  MenuListProps
+  MenuListProps,
+  PlaceholderProps
 } from 'react-select'
 
 import { Icon } from 'components/atoms'
@@ -44,4 +45,8 @@ export const MenuList = (props: MenuListProps) => (
   <S.MenuListWrapper data-testid="MenuList">
     <components.MenuList {...props} />
   </S.MenuListWrapper>
+)
+
+export const Placeholder = (props: PlaceholderProps) => (
+  <S.Placeholder data-testid="Placeholder" {...props} />
 )

@@ -22,4 +22,5 @@ export type Columns = ColumnDef<TransactionsTable, unknown>[]
 export type UseFetchTable = {
   columns: Columns
   rows?: TransactionsTable[]
+  isLoading: boolean
 }

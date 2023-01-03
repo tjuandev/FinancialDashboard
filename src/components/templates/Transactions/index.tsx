@@ -4,7 +4,7 @@ import { Grid, Icon } from 'components/atoms'
 import { ExpandableInput, Kpi, Select, Table } from 'components/molecules'
 import { Header } from 'components/organisms'
 
-import { Props, TableProps } from './types'
+import { Props } from './types'
 
 import { IconLiterals } from 'types/icons'
 
@@ -43,7 +43,7 @@ const KPIs = () => (
 const TransactionsSelector = () => (
   <S.TransactionsSelectorWrapper>
     <Select
-      defaultValue="all"
+      defaultValue={{ value: 'all', label: 'Todas' }}
       options={[
         { value: 'all', label: 'Todas' },
         { value: 'incomes', label: 'Ganhos' },
@@ -65,13 +65,6 @@ const Toolbar = () => (
   </S.ToolbarContainer>
 )
 
-const TransactionsTable = <TableType,>(props: TableProps<TableType>) => {
-  const { columns, rows } = props
-  const shouldLoad = !columns && !rows
-
-  return <Table loading={shouldLoad} {...props} />
-}
-
 const Transactions = <TableType,>({
   headerProps,
   tableProps
@@ -81,7 +74,7 @@ const Transactions = <TableType,>({
     <S.Main>
       <KPIs />
       <Toolbar />
-      <TransactionsTable {...tableProps} />
+      <Table<TableType> {...tableProps} />
     </S.Main>
   </S.Container>
 )
