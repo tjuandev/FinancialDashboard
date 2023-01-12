@@ -2,7 +2,7 @@
 
 Instructions to run project:
 
-yarn
-yarn dev
+``` yarn
+yarn dev ```
 
 go to localhost:3000/
