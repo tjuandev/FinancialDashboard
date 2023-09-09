@@ -1,0 +1,4 @@
+.next
+coverage
+.vscode
+node_modules

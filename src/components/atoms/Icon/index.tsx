@@ -6,6 +6,7 @@ import { IconsProps } from './types'
 const Icon = ({ name, ...props }: IconsProps) => {
   if (name in iconsLiterals) {
     return cloneElement(iconsLiterals[name], {
+      'aria-label': `${name} icon`,
       ...props
     })
   }

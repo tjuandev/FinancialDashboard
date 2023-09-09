@@ -5,7 +5,7 @@ import { IconButtonProps } from './types'
 const IconButton = ({ name = 'search', ...buttonProps }: IconButtonProps) => {
   return (
     <S.ButtonWrapper>
-      <Button __hover={() => ({})} {...buttonProps}>
+      <Button {...buttonProps}>
         <Icon name={name} />
       </Button>
     </S.ButtonWrapper>

@@ -1,6 +1,6 @@
 import { IconProps } from '../types'
 
-function Icon({ color, height = 29, width = 35 }: IconProps) {
+function Icon({ color, height = 29, width = 35, ...props }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ function Icon({ color, height = 29, width = 35 }: IconProps) {
       viewBox="0 0 35 29"
       role="img"
       aria-label="Stock Up"
+      {...props}
     >
       <g
         stroke={color ? color : 'currentColor'}

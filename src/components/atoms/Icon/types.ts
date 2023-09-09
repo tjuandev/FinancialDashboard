@@ -1,3 +1,4 @@
+import { SVGProps } from 'react'
 import { iconsLiterals } from './iconsLiterals'
 
 type IconsLiteralsInferenceType = typeof iconsLiterals
@@ -10,4 +11,4 @@ export type IconsProps = {
   height?: string | number
 }
 
-export type IconProps = Omit<IconsProps, 'name'>
+export type IconProps = Omit<IconsProps, 'name'> & SVGProps<SVGSVGElement>

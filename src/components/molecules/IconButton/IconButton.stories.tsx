@@ -20,4 +20,6 @@ export const Primary: Story<IconButtonProps> = (args) => (
   <IconButton {...args} />
 )
 
-Primary.args = {}
+Primary.args = {
+  name: 'search'
+}

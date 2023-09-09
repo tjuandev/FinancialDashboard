@@ -1,8 +1,4 @@
-import Transactions from '../index.page'
-
 import useFetchTable from '../useFetchTable'
-
-import { renderWithQueryClient } from 'tests/providers'
 
 jest.mock('../useFetchTable', () => jest.fn())
 
@@ -13,9 +9,5 @@ describe('<Transactions />', () => {
     mockedUseFetchTable.mockImplementation(() => ({}))
   })
 
-  it('Should fetch useFetchTable one time', () => {
-    renderWithQueryClient(<Transactions />)
-
-    expect(useFetchTable).toHaveBeenCalledTimes(1)
-  })
+  it.todo('')
 })

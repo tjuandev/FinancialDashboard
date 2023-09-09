@@ -1,6 +1,6 @@
 import { IconProps } from '../types'
 
-function Icon({ color, height = 9, width = 15 }: IconProps) {
+function Icon({ color, height = 9, width = 15, ...props }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ function Icon({ color, height = 9, width = 15 }: IconProps) {
       role="img"
       aria-label="ChevronDown"
       viewBox="0 0 15 9"
+      {...props}
     >
       <path
         stroke={color ? color : 'currentColor'}
