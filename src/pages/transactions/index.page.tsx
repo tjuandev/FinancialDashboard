@@ -1,5 +1,5 @@
-import { Icon } from 'components/atoms'
-import { Transactions } from 'components/templates'
+import { Icon } from 'ui/components/atoms'
+import { Transactions } from 'ui/components/templates'
 import { TransactionsTable } from './types'
 
 import useFetchTable from './useFetchTable'

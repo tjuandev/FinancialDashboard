@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Providers from 'providers'
-import GlobalStyle from 'styles/global'
+import GlobalStyle from 'ui/styles/global'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
