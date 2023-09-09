@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  body {
+    background-color: #DCE5D5;
+  }
+
   body,
   input,
   button,
