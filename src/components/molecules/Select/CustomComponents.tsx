@@ -5,7 +5,6 @@ import {
   components,
   InputProps,
   SingleValueProps,
-  DropdownIndicatorProps,
   MenuProps,
   MenuListProps,
   PlaceholderProps
@@ -13,9 +12,7 @@ import {
 
 import { Icon } from 'components/atoms'
 
-export const DropdownIndicator = (props: DropdownIndicatorProps) => (
-  <Icon name="chevron-down" {...props} />
-)
+export const DropdownIndicator = () => <Icon name="chevron-down" />
 
 export const SingleValue = (props: SingleValueProps) => (
   <S.SingleValueWrapper data-testid="SingleValue">
