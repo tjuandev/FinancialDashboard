@@ -19,6 +19,7 @@ const ExpandableIconButton = ({
   const handleOpen = () => {
     if (onOpen) onOpen()
     setOpen(true)
+    inputRef?.current?.focus()
   }
 
   const handleClose = () => setOpen(false)
@@ -31,11 +32,7 @@ const ExpandableIconButton = ({
       data-testid="container-element"
       expandedWidth={expandedWidth}
     >
-      <IconButton
-        name={iconName}
-        onClick={handleOpen}
-        onFocus={() => inputRef?.current?.focus()}
-      />
+      <IconButton name={iconName} onClick={handleOpen} />
       <S.Input
         className={openClassName}
         type="text"

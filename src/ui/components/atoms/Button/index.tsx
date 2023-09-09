@@ -10,6 +10,7 @@ const Button = ({
   ...buttonProps
 }: ButtonProps) => (
   <S.Container
+    type="button"
     onClick={onClick}
     padding={padding}
     extraStyles={extraStyles}
