@@ -27,13 +27,15 @@ export const Container = styled.button<ButtonWrapperProps>`
   font-size: 1rem;
   font-weight: ${theme.typography.fontWeights.semibold};
 
-  transition: ${theme.transitions.base};
   cursor: pointer;
 
-  :focus {
-    outline: 1px solid ${theme.colors.primary};
+  :hover {
+    ${theme.states.darkOnHover}
   }
 
+  :focus {
+    ${theme.states.focus}
+  }
   ${({ __hover }) => __hover && __hover}
   ${({ extraStyles }) => extraStyles}
 `

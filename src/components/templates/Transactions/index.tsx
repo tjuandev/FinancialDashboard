@@ -6,7 +6,7 @@ import { Header } from 'components/organisms'
 
 import { Props } from './types'
 
-import { IconLiterals } from 'types/icons'
+import { IconsNames } from 'types/icons'
 
 import { v4 as uuid } from 'uuid'
 
@@ -32,7 +32,7 @@ const KPIs = () => (
   <Grid columns="repeat(3, 290px)" gap={8}>
     {kpisMock.map(({ iconName, ...kpiProps }) => (
       <Kpi
-        headerChildren={<Icon name={iconName as IconLiterals} />}
+        headerChildren={<Icon name={iconName as IconsNames} />}
         key={uuid()}
         {...kpiProps}
       />

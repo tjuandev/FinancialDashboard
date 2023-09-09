@@ -1,10 +1,10 @@
 import { iconsLiterals } from './iconsLiterals'
 
 type IconsLiteralsInferenceType = typeof iconsLiterals
-export type IconsLiteralsOptions = keyof IconsLiteralsInferenceType
+export type IconsNames = keyof IconsLiteralsInferenceType
 
 export type IconsProps = {
-  name: IconsLiteralsOptions
+  name: IconsNames
   color?: string
   width?: string | number
   height?: string | number

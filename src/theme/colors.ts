@@ -5,7 +5,8 @@ const colors = {
   tertiary: '#DCE5D5',
   positive: '#19B200',
   negative: '#FF4242',
-  placeholder: 'rgba(20, 64, 77, 0.5)'
+  placeholder: 'rgba(20, 64, 77, 0.5)',
+  focus: '#308ADB'
 }
 
 export default colors

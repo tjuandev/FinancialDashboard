@@ -1,19 +1,7 @@
 import { useRef, useState } from 'react'
-
-import { Button as BaseButton, Icon } from 'components/atoms'
-
 import * as S from './styles'
-import { ButtonProps, ExpandableInputProps } from './types'
-
-const IconButton = ({ iconName = 'search', onClick }: ButtonProps) => {
-  return (
-    <S.ButtonWrapper>
-      <BaseButton __hover={() => ({})} onClick={onClick}>
-        <Icon name={iconName} />
-      </BaseButton>
-    </S.ButtonWrapper>
-  )
-}
+import { ExpandableInputProps } from './types'
+import IconButton from '../IconButton'
 
 const ExpandableIconButton = ({
   onOpen,
@@ -31,8 +19,6 @@ const ExpandableIconButton = ({
   const handleOpen = () => {
     if (onOpen) onOpen()
     setOpen(true)
-
-    inputRef?.current?.focus()
   }
 
   const handleClose = () => setOpen(false)
@@ -45,7 +31,11 @@ const ExpandableIconButton = ({
       data-testid="container-element"
       expandedWidth={expandedWidth}
     >
-      <IconButton iconName={iconName} onClick={handleOpen} />
+      <IconButton
+        name={iconName}
+        onClick={handleOpen}
+        onFocus={() => inputRef?.current?.focus()}
+      />
       <S.Input
         className={openClassName}
         type="text"
