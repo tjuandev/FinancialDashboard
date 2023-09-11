@@ -1,0 +1,12 @@
+public/*
+.storybook
+.jest
+.next
+yarn.lock
+.gitignore
+.prettierignore
+.gitattributes
+coverage
+storybook-static
+.tsBuildInfoFile
+jest.config.js
