@@ -1,6 +1,0 @@
-export { default as Kpi } from './Kpi'
-export { default as Select } from './Select'
-export { default as ExpandableInput } from './ExpandableInput'
-export { default as Breadcrumb } from './Breadcrumb'
-export { default as Table } from './Table'
-export { default as IconButton } from './IconButton'
