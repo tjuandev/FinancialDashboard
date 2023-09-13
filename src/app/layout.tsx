@@ -2,10 +2,16 @@
 import Providers from 'providers'
 import { ReactNode } from 'react'
 import GlobalStyle from 'ui/styles/global'
+import { Inter } from 'next/font/google'
+
+const interFont = Inter({
+  display: 'swap',
+  subsets: ['latin']
+})
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={interFont.className}>
       <head>
         <meta
           content="minimum-scale=1, initial-scale=1, width=device-width"
