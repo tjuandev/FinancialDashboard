@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { Grid, Icon } from 'ui/components/atoms'
-import { ExpandableInput, Kpi, Select, Table } from 'ui/components/molecules'
+import { ExpandableInput, Kpi, Select } from 'ui/components/molecules'
 import { Header } from 'ui/components/organisms'
 
 import { Props } from './types'
@@ -64,16 +64,12 @@ const Toolbar = () => (
   </S.ToolbarContainer>
 )
 
-const Transactions = <TableType,>({
-  headerProps,
-  tableProps
-}: Props<TableType>) => (
+const Transactions = <TableType,>({ headerProps }: Props<TableType>) => (
   <S.Container>
     <Header {...headerProps} />
     <S.Main>
       <KPIs />
       <Toolbar />
-      <Table<TableType> {...tableProps} />
     </S.Main>
   </S.Container>
 )
