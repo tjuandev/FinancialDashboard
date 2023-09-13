@@ -1,3 +1,4 @@
+'use client'
 import { Icon } from 'ui/components/atoms'
 import { Transactions } from 'ui/components/templates'
 import { TransactionsTable } from './types'

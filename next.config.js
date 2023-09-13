@@ -10,7 +10,10 @@ const nextConfig = {
     path: '/_next/image'
   },
   optimizeFonts: true,
-  reactStrictMode: true
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true
+  }
 }
 
 module.exports = nextConfig
