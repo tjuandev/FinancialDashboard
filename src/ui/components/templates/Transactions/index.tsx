@@ -9,6 +9,8 @@ import { Props } from './types'
 import { v4 as uuid } from 'uuid'
 import { IconsNames } from 'ui/components/atoms/Icon/types'
 
+import { Button } from '@chakra-ui/react'
+
 const kpisMock = [
   {
     name: 'R$ 1290,20',
@@ -57,9 +59,9 @@ const Toolbar = () => (
     <TransactionsSelector />
     <S.ToolbarLeftSide>
       <ExpandableInput placeholder="Type something..." />
-      <S.NewEntryButton colorSchema="secondary">
+      <Button variant="secondary">
         Nova Entrada <Icon name="plus" />
-      </S.NewEntryButton>
+      </Button>
     </S.ToolbarLeftSide>
   </S.ToolbarContainer>
 )
